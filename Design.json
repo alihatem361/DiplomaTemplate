@@ -1,0 +1,153 @@
+{
+  "designSystemProfile": {
+    "name": "Corporate & Professional Education Landing Page",
+    "version": "1.0.0",
+    "description": "A design system for a professional and modern landing page, likely for educational or business services, featuring a clean layout with strong calls-to-action.",
+    "style": {
+      "overallImpression": "Professional, clean, modern, trustworthy.",
+      "palette": {
+        "primary": {
+          "main": "#00B87B",
+          "description": "A vibrant green used for primary calls-to-action, conveying success and growth."
+        },
+        "secondary": {
+          "main": "#212529",
+          "description": "A dark, almost black, used for the main background, providing a professional and serious tone."
+        },
+        "accent": {
+          "main": "#FFFFFF",
+          "description": "White, used for text and highlights to contrast with the dark background."
+        },
+        "neutral": {
+          "light": "#F8F9FA",
+          "medium": "#E9ECEF",
+          "dark": "#6C757D",
+          "description": "A range of grays for form backgrounds, borders, and placeholder text to create a soft, clean interface."
+        }
+      },
+      "typography": {
+        "families": {
+          "primary": "Sans-serif (e.g., 'IBM Plex Sans Arabic', 'Tajawal', or a similar modern Arabic font)",
+          "secondary": "Sans-serif (e.g., 'Inter', 'Roboto', or 'Open Sans' for Latin characters)"
+        },
+        "styles": {
+          "heading1": {
+            "fontWeight": "bold",
+            "fontSize": "2.5rem",
+            "letterSpacing": "normal",
+            "textTransform": "none",
+            "description": "Large, bold headings for major titles."
+          },
+          "heading2": {
+            "fontWeight": "bold",
+            "fontSize": "1.75rem",
+            "letterSpacing": "normal",
+            "textTransform": "none",
+            "description": "Slightly smaller headings, used for form titles."
+          },
+          "body": {
+            "fontWeight": "normal",
+            "fontSize": "1rem",
+            "lineHeight": "1.6",
+            "description": "Standard text for paragraphs and descriptions."
+          },
+          "label": {
+            "fontWeight": "500",
+            "fontSize": "0.875rem",
+            "description": "Used for form field labels."
+          },
+          "button": {
+            "fontWeight": "bold",
+            "fontSize": "1rem",
+            "textTransform": "none"
+          }
+        }
+      },
+      "spacing": {
+        "baseUnit": "8px",
+        "scale": {
+          "xs": "4px",
+          "sm": "8px",
+          "md": "16px",
+          "lg": "24px",
+          "xl": "32px",
+          "xxl": "48px"
+        },
+        "description": "A consistent spacing scale is used for padding, margins, and layout gaps, creating a balanced and organized look."
+      },
+      "iconography": {
+        "style": "Solid, simple, and functional.",
+        "commonIcons": ["phone", "envelope", "dropdown-arrow"],
+        "description": "Icons are used sparingly and have a clear purpose, such as indicating input field types."
+      }
+    },
+    "structure": {
+      "layout": {
+        "type": "Asymmetrical Two-Column",
+        "description": "A common hero section layout with a visually dominant content area on one side and a conversion-focused form on the other. The layout uses a subtle, flowing background shape to divide the sections."
+      },
+      "components": {
+        "button": {
+          "style": "Solid fill, bold text.",
+          "borderRadius": "8px",
+          "padding": "16px 24px",
+          "shadow": "subtle, on hover/focus",
+          "states": {
+            "default": {
+              "backgroundColor": "primary.main",
+              "color": "accent.main"
+            },
+            "hover": { "backgroundColor": "darken(primary.main, 10%)" }
+          }
+        },
+        "inputField": {
+          "style": "Minimal with a bottom border or a very light background.",
+          "borderRadius": "8px",
+          "padding": "12px 16px",
+          "border": "1px solid neutral.medium",
+          "backgroundColor": "neutral.light",
+          "states": {
+            "default": { "borderColor": "neutral.medium" },
+            "focus": {
+              "borderColor": "primary.main",
+              "boxShadow": "0 0 0 3px rgba(0, 184, 123, 0.25)"
+            }
+          }
+        },
+        "form": {
+          "layout": "Vertical stack of label-input pairs.",
+          "spacing": "lg (24px) between fields.",
+          "background": "neutral.light",
+          "borderRadius": "16px",
+          "padding": "xxl (48px)",
+          "shadow": "Large, diffused shadow to lift it off the background."
+        },
+        "statCounter": {
+          "layout": "Horizontal group.",
+          "style": "Large number with a descriptive label below it.",
+          "separator": "None visible, uses spacing.",
+          "description": "Used to showcase key metrics and build social proof."
+        },
+        "logo": {
+          "style": "Two-tone, simple text-based logo.",
+          "placement": "Top-left or top-right corner.",
+          "description": "Clean and unobtrusive."
+        }
+      }
+    },
+    "replicationGuide": {
+      "keyPrinciples": [
+        "High Contrast: Use dark backgrounds with light text to create a strong visual hierarchy and a premium feel.",
+        "Clear Call-to-Action: The primary button should be the most vibrant element on the page to draw user attention.",
+        "Generous Spacing: Don't crowd elements. Use ample whitespace and defined spacing to guide the eye and improve readability.",
+        "Focus on Conversion: The form is a central piece of the design. It should be clean, easy to use, and visually distinct.",
+        "Trust Signals: Use statistics and clear, professional language to build credibility with the user."
+      ],
+      "implementationNotes": [
+        "The flowing background divider can be implemented as an SVG for scalability.",
+        "Ensure font choices support both the Latin and Arabic scripts if targeting a multilingual audience.",
+        "Implement clear focus states on all interactive elements for accessibility."
+      ]
+    }
+  }
+}
