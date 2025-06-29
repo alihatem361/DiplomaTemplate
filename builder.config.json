@@ -1,0 +1,6 @@
+{
+  "command": "",
+  "serverUrl": "https://builder.io/app/projects",
+  "authenticateProxy": false,
+  "commitMode": "commits"
+}
