@@ -20,7 +20,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid red; */
 }
 
 body {
@@ -950,3 +949,80 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* =========================== certificates-section-container ============================= */
+
+
+.certificates-section-container {
+  position: relative;
+  margin-top: 80px; /* Adjusted margin to move the section up */
+  margin-bottom: 57px; /* Adjusted margin to move the section up */
+  /* margin-top: 5px; Adjusted margin to move the section up */
+}
+
+.certificates-section-ellipse-150 {
+  width: 100%;
+  z-index: 23;
+  background: url("/images/Ellipse 150.svg") no-repeat center center;
+  background-size: cover;
+  height: 200px;
+  z-index: 23;
+  position: absolute;
+  top: -150px; /* Adjusted top position for desktop */
+}
+
+@media (max-width: 767px) {
+  .certificates-section-ellipse-150 {
+    height: 150px;
+    top: -131px; /* Adjusted top position for mobile */
+    left: 0px; /* Adjusted left position for mobile */
+  }
+}
+
+.certificates-section-ellipse-152 {
+  width: 100%;
+  z-index: 22;
+  background: url("/images/Ellipse 152.svg") no-repeat center center;
+  background-size: cover;
+  height: 120px;
+  z-index: 22;
+  position: absolute;
+  bottom: -88px;
+}
+
+.certificates-section {
+  position: relative;
+  background-color: #154394;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding: 134px 0; /* Adjusted padding for top and bottom */
+
+  /* top: -60px; */
+}
+
+@media (max-width: 767px) {
+  .certificates-section {
+    max-width: 100%;
+    padding: 120px 5px;
+  }
+}
+
+
+/* ======================================== */
+
+.button-image-container {
+  width: 100%;
+}
+
+.hero-shape-button{
+      z-index: 12;
+    width: 100%;
+    top: -133px;
+    height: 203px;
+position: absolute;
+  }
