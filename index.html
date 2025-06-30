@@ -184,12 +184,12 @@
       </div>
 
       <div class="mb-[-23px] w-full max-w-[1106px] max-md:max-w-full max-md:mb-2.5">
-        <div class="gap-5 flex max-md:flex-col-reverse max-md:items-stretch">
+        <div class="gap-5 flex max-md:flex-col max-md:items-stretch">
 
           <!-- ------------------- section text ---------------------- -->
-          <div class="w-3/5 ml-5 max-md:w-full max-md:ml-0">
+          <div class="w-3/5 ml-5 max-md:w-full max-md:ml-0 md:text-center">
             <div class="relative flex items-start w-full flex-col max-md:max-w-full max-md:mt-10 z-12">
-              <div class="flex w-[509px] max-w-full flex-col items-stretch text-right rounded-[0px_0px_0px_0px]">
+              <div class="flex w-[509px] max-w-full flex-col items-stretch text-right max-md:text-center rounded-[0px_0px_0px_0px]">
                 <h2 class="text-[#FCFCFC] text-[34px] font-medium leading-none">
                   التوصيات و الإعتمادات
                 </h2>
@@ -202,7 +202,7 @@
                 </p>
               </div>
               <div
-                class="bg-[#02B34F] flex gap-4 text-sm text-[#E8ECF4] font-semibold text-center leading-none mt-2 rounded-md">
+                class="bg-[#02B34F] flex gap-4 text-sm text-[#E8ECF4] font-semibold text-center leading-none mt-2 rounded-md max-md:hidden">
                 <button
                   class="self-stretch shadow-[0px_1px_4px_0px_rgba(25,33,61,0.08)] gap-[3px] px-[18px] py-[15px] rounded-md"
                   aria-label="احجز مكانك معانا">
@@ -215,7 +215,8 @@
           <!-- ------------------- section images ---------------------- -->
           <div class="w-2/5 max-md:w-full max-md:ml-0">
             <div class="flex w-full flex-col self-stretch items-center my-auto max-md:mt-10">
-              <div class="flex w-full max-w-[366px] items-center gap-[19px] justify-center flex-wrap flex-row-reverse">
+              <!-- Desktop layout: flex-wrap -->
+              <div class="hidden md:flex w-full max-w-[366px] items-center gap-[19px] justify-center flex-wrap flex-row-reverse">
                 <!-- Certificate 1 -->
                 <div
                   class="relative bg-[rgba(252,252,252,1)] self-stretch flex gap-[5px] overflow-hidden w-[108px] h-[108px] my-auto p-[19px] rounded-[13px]">
@@ -262,6 +263,66 @@
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/367d0d2ab6b7610b6846837062e81f8783235319?placeholderIfAbsent=true"
                     alt="Certificate 6" class="aspect-[1] object-contain w-20 relative z-12" />
+                </div>
+              </div>
+
+              <!-- Mobile layout: specific arrangement -->
+              <div class="flex md:hidden w-full max-w-[366px] flex-col items-center gap-[19px]">
+                <!-- Top row: 3 certificates -->
+                <div class="flex gap-[19px] justify-center">
+                  <!-- Certificate 1 (IFTDO) -->
+                  <div
+                    class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-[19px] rounded-[13px]">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/d9d65cb7b71a198171bdf00faec3f05beb7c802b?placeholderIfAbsent=true"
+                      alt="Certificate 1" class="aspect-[1.01] object-contain w-[70px] relative z-12" />
+                  </div>
+
+                  <!-- Certificate 2 (IAO) -->
+                  <div
+                    class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-3.5 rounded-[13px]">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/6dc4dfff03de415a96fca8951dd8e78542b5df4f?placeholderIfAbsent=true"
+                      alt="Certificate 2" class="aspect-[1] object-contain w-20 relative z-12" />
+                  </div>
+
+                  <!-- Certificate 3 (Red circle) -->
+                  <div
+                    class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-[18px] rounded-[13px]">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/07388f2190e40a4dbee786e893c2eb363070182c?placeholderIfAbsent=true"
+                      alt="Certificate 3" class="aspect-[1.01] object-contain w-[72px] relative z-12" />
+                  </div>
+                </div>
+
+                <!-- Middle row: 2 certificates -->
+                <div class="flex gap-[19px] justify-center">
+                  <!-- Certificate 4 -->
+                  <div
+                    class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] px-2.5 rounded-[13px]">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/e5229036f0066f9fa09660b3de1f2d875d150aa6?placeholderIfAbsent=true"
+                      alt="Certificate 4" class="aspect-[1.45] object-contain w-[86px] relative z-12" />
+                  </div>
+
+                  <!-- Certificate 5 -->
+                  <div
+                    class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-3 rounded-[13px]">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/54c7906851fda3ecb72108569fd2b124f7663914?placeholderIfAbsent=true"
+                      alt="Certificate 5" class="aspect-[1] object-contain w-[83px] relative z-12" />
+                  </div>
+                </div>
+
+                <!-- Bottom row: 1 certificate -->
+                <div class="flex justify-center">
+                  <!-- Certificate 6 -->
+                  <div
+                    class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-[13px] rounded-[13px]">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/367d0d2ab6b7610b6846837062e81f8783235319?placeholderIfAbsent=true"
+                      alt="Certificate 6" class="aspect-[1] object-contain w-20 relative z-12" />
+                  </div>
                 </div>
               </div>
             </div>
