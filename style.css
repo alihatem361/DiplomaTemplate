@@ -1204,3 +1204,364 @@ body {
   background-color: #080420;
 
 }
+
+/* MBA Program Section */
+.mba-program-section {
+  position: relative;
+  background: #E8ECF4;
+  padding-bottom: 48px;
+}
+
+.mba-program-section-large-shape {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  width: 100%;
+}
+
+.mba-program-section-large-shape-mobile {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  width: 100%;
+  display: none;
+}
+
+.mba-program-container {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 180px 32px 48px 16px;
+}
+
+.mba-program-title {
+  position: relative;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 16px;
+}
+
+.title-blue {
+  color: #0047BA;
+}
+
+.title-green {
+  color: #00A651;
+}
+
+.mba-program-description {
+  position: relative;
+  text-align: right;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #454545;
+}
+
+.mba-program-bg-large {
+  position: absolute;
+  top: 120px;
+  left: -106px;
+  display: block;
+}
+
+.mba-program-bg-small {
+  position: absolute;
+  top: 31px;
+  left: -22px;
+  display: none;
+}
+
+.mba-program-content {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.mba-program-text {
+  width: 33.333333%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: right;
+}
+
+.mba-info-items-mobile {
+  display: none;
+}
+
+.mba-info-item {
+  color: #454545;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.mba-register-button {
+  background: #00A651;
+  color: white;
+  padding: 8px 32px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 80%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 24px;
+}
+
+.mba-register-button:hover {
+  background: #008c44;
+}
+
+.mba-program-grid-container {
+  width: 66.666667%;
+}
+
+.mba-program-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.mba-specialization-card {
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+}
+
+.business-card {
+  grid-column: 1 / 3;
+  grid-row: 1 / 4;
+}
+
+.marketing-card {
+  grid-column: 1 / 3;
+  grid-row: 4 / 7;
+}
+
+.finance-card {
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+}
+
+.supply-card {
+  grid-column: 3 / 5;
+  grid-row: 3 / 5;
+}
+
+.hr-card {
+  grid-column: 3 / 5;
+  grid-row: 5 / 7;
+}
+
+.mba-card-content {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.mba-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mba-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 16px;
+  transition: all 0.3s duration;
+}
+
+.mba-card-overlay:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.mba-card-title {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.mba-card-description {
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.mba-specialization-card:hover .mba-card-description {
+  opacity: 1;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .mba-program-container {
+    padding: 90px 16px 48px 16px;
+  }
+  
+  .mba-program-title {
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 24px;
+  }
+  
+  .mba-program-content {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+  
+  .mba-program-text {
+    width: 100%;
+  }
+  
+  .mba-program-grid-container {
+    width: 100%;
+  }
+  
+  .mba-program-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  
+  .business-card,
+  .marketing-card,
+  .finance-card,
+  .supply-card,
+  .hr-card {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  
+  .mba-card-content {
+    height: 200px;
+  }
+  
+  .mba-register-button {
+    width: 100%;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .mba-program-section-large-shape {
+    display: none;
+  }
+  
+  .mba-program-section-large-shape-mobile {
+    display: block;
+  }
+  
+  .mba-program-bg-large {
+    display: none;
+  }
+  
+  .mba-program-bg-small {
+    display: block;
+  }
+  
+  .mba-program-container {
+    padding: 90px 16px 48px 16px;
+  }
+  
+  .mba-program-title {
+    font-size: 18px;
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  .mba-program_description {
+    font-size: 12px;
+    text-align: right;
+  }
+  
+  .mba-info-items-desktop {
+    display: none;
+  }
+  
+  .mba-info-items-mobile {
+    display: block;
+  }
+  
+  .mba-info-item {
+    font-size: 12px;
+  }
+  
+  .mba-card-title {
+    font-size: 16px;
+  }
+  
+  .mba-card-description {
+    font-size: 14px;
+  }
+  
+  .mba-card-content {
+    border-radius: 20px;
+  }
+  
+  .mba-card-overlay {
+    border-radius: 20px;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .mba-program-title {
+    font-size: 16px;
+  }
+  
+  .mba-program-description {
+    font-size: 12px;
+  }
+  
+  .mba-info-item {
+    font-size: 12px;
+  }
+  
+  .mba-register-button {
+    font-size: 14px;
+    padding: 8px 24px;
+  }
+}
+
+/* Desktop grid adjustment */
+@media (min-width: 1025px) {
+  .mba-card-content {
+    height: 100%;
+    border-radius: 32px;
+  }
+  
+  .mba-card-overlay {
+    border-radius: 32px;
+  }
+  
+  .mba-card-title {
+    font-size: 20px;
+  }
+  
+  .mba-card-description {
+    font-size: 16px;
+  }
+}
