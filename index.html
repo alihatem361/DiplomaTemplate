@@ -1,914 +1,1234 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>أكاديمية إعمل بيزنس - DBA Online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>أكاديمية إعمل بيزنس - DBA Online</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet" />
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <div class="hero-section">
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <!-- CTA Button -->
-        <div class="nav-cta">
-          <button class="cta-button">
-            <span>سجل الآن و ابدأ رحلتك</span>
-            <svg class="cta-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M8.414 13.3431L12.364 17.2931C12.5462 17.4817 12.647 17.7343 12.6447 17.9965C12.6424 18.2587 12.5372 18.5095 12.3518 18.6949C12.1664 18.8803 11.9156 18.9855 11.6534 18.9878C11.3912 18.99 11.1386 18.8892 10.95 18.7071L5.293 13.0501C5.19982 12.9574 5.12587 12.8473 5.07541 12.7259C5.02494 12.6046 4.99897 12.4745 4.99897 12.3431C4.99897 12.2117 5.02494 12.0816 5.07541 11.9602C5.12587 11.8389 5.19982 11.7287 5.293 11.6361L10.95 5.97908C11.0422 5.88357 11.1526 5.80739 11.2746 5.75498C11.3966 5.70257 11.5278 5.67498 11.6606 5.67383C11.7934 5.67268 11.9251 5.69798 12.048 5.74826C12.1709 5.79854 12.2825 5.87279 12.3764 5.96669C12.4703 6.06058 12.5445 6.17223 12.5948 6.29513C12.6451 6.41802 12.6704 6.5497 12.6693 6.68248C12.6681 6.81526 12.6405 6.94648 12.5881 7.06849C12.5357 7.19049 12.4595 7.30083 12.364 7.39308L8.414 11.3431H18C18.2652 11.3431 18.5196 11.4484 18.7071 11.636C18.8946 11.8235 19 12.0779 19 12.3431C19 12.6083 18.8946 12.8627 18.7071 13.0502C18.5196 13.2377 18.2652 13.3431 18 13.3431H8.414Z"
-                fill="white" />
-            </svg>
-          </button>
-        </div>
-        <div class="nav-content-container">
-          <!-- Mobile Menu Button -->
-          <div class="mobile-menu-button">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-
-          <!-- Navigation Links -->
-          <div class="nav-links">
-            <a href="#testimonials" class="nav-link">التوصيات و الأعتمادات</a>
-            <a href="#for-whom" class="nav-link">لكل من</a>
-            <a href="#specialties" class="nav-link">التخصصات</a>
-            <a href="#why-us" class="nav-link">لماذا تختارنا</a>
-            <a href="#success-stories" class="nav-link">قصص نجاحنا</a>
-            <a href="#payment-methods" class="nav-link">طرق الدفع</a>
-          </div>
-
-          <!-- Logo -->
-          <div class="logo">
-            <div class="logo-text-small">أكاديمية</div>
-            <div class="logo-text-main">إعمل</div>
-            <div class="logo-text-accent">بيزنس</div>
-            <div class="logo-text-en">E3MEL BUSINESS ACADEMY</div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Hero Content -->
-    <div class="hero-content">
-      <!-- Right Side - Hero Text & Stats -->
-      <div class="hero-main">
-        <div class="hero-text">
-          <div class="dba-title">
-            <h1 class="dba-text">DBA</h1>
-            <div class="online-text">Online</div>
-            <div class="title-divider"></div>
-          </div>
-
-          <h2 class="hero-headline">
-            احصل على شهادة دبلومة معتمدة بخصم 20٪ الآن!
-          </h2>
-
-          <p class="hero-subtitle">
-            فرصة للتميز المهني وتطوير المهارات بأسعار ميسّرة وبرامج مرنة
-          </p>
-        </div>
-
-        <div class="stats-container">
-          <div class="stat-item">
-            <div class="stat-circle">
-              <div class="stat-number">150+</div>
-            </div>
-            <div class="stat-label">شهادات معتمدة</div>
-          </div>
-
-          <div class="stat-item">
-            <div class="stat-circle">
-              <div class="stat-number">100+</div>
-            </div>
-            <div class="stat-label">شهادة ماجستير</div>
-          </div>
-
-          <div class="stat-item">
-            <div class="stat-circle">
-              <div class="stat-number">500+</div>
-            </div>
-            <div class="stat-label">طالب أكاديمي</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Left Side - Registration Form -->
-      <div class="registration-form">
-        <div class="form-header">
-          <h2 class="form-title">
-            سجل الآن و احصل علي <span class="highlight">شهادة معتمدة</span>
-          </h2>
-          <p class="form-description">
-            انضم إلى آلاف الأشخاص الذين طوروا مهاراتهم وحصلوا على شهادات
-            معتمدة تعزز فرصهم الوظيفية. سجل الآن وابدأ رحلتك نحو النجاح!
-          </p>
-        </div>
-
-        <form class="form">
-          <div class="form-field">
-            <label class="field-label">الاسم</label>
-            <input type="text" class="field-input" placeholder="اكتب اسمك" />
-          </div>
-
-          <div class="form-field">
-            <label class="field-label required">
-              رقم الهاتف
-              <svg class="required-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+  <body>
+    <div class="hero-section">
+      <!-- Navigation Bar -->
+      <nav class="navbar">
+        <div class="nav-container">
+          <!-- CTA Button -->
+          <div class="nav-cta">
+            <button class="cta-button">
+              <span>سجل الآن و ابدأ رحلتك</span>
+              <svg
+                class="cta-icon"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
                 <path
-                  d="M10.8601 6.53467H7.56011L9.91011 8.88467L9.21011 9.58467L6.86011 7.23467V10.5347H5.86011V7.18467L3.51011 9.53467L2.81011 8.83467L5.06011 6.53467H1.86011V5.53467H5.16011L2.81011 3.18467L3.51011 2.48467L5.86011 4.83467V1.53467H6.86011V4.73467L9.16011 2.43467L9.86011 3.18467L7.51011 5.53467H10.8601V6.53467Z"
-                  fill="#D84226" />
+                  d="M8.414 13.3431L12.364 17.2931C12.5462 17.4817 12.647 17.7343 12.6447 17.9965C12.6424 18.2587 12.5372 18.5095 12.3518 18.6949C12.1664 18.8803 11.9156 18.9855 11.6534 18.9878C11.3912 18.99 11.1386 18.8892 10.95 18.7071L5.293 13.0501C5.19982 12.9574 5.12587 12.8473 5.07541 12.7259C5.02494 12.6046 4.99897 12.4745 4.99897 12.3431C4.99897 12.2117 5.02494 12.0816 5.07541 11.9602C5.12587 11.8389 5.19982 11.7287 5.293 11.6361L10.95 5.97908C11.0422 5.88357 11.1526 5.80739 11.2746 5.75498C11.3966 5.70257 11.5278 5.67498 11.6606 5.67383C11.7934 5.67268 11.9251 5.69798 12.048 5.74826C12.1709 5.79854 12.2825 5.87279 12.3764 5.96669C12.4703 6.06058 12.5445 6.17223 12.5948 6.29513C12.6451 6.41802 12.6704 6.5497 12.6693 6.68248C12.6681 6.81526 12.6405 6.94648 12.5881 7.06849C12.5357 7.19049 12.4595 7.30083 12.364 7.39308L8.414 11.3431H18C18.2652 11.3431 18.5196 11.4484 18.7071 11.636C18.8946 11.8235 19 12.0779 19 12.3431C19 12.6083 18.8946 12.8627 18.7071 13.0502C18.5196 13.2377 18.2652 13.3431 18 13.3431H8.414Z"
+                  fill="white"
+                />
               </svg>
-            </label>
-            <div class="phone-input">
-              <input type="tel" class="phone-field" placeholder="+05 (555) 000-0000" />
+            </button>
+          </div>
+          <div class="nav-content-container">
+            <!-- Mobile Menu Button -->
+            <div class="mobile-menu-button">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
 
-              <div class="phone-dropdown">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/be392643c8220ccd0ce1567e3ad7745c42e9ff3f?width=41"
-                  alt="SA Flag" class="country-flag" />
-                <svg class="dropdown-icon" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                  <path d="M5.71765 8.57227L10.8612 13.7158L16.0047 8.57227" stroke="#667085" stroke-width="1.41763"
-                    stroke-linecap="round" stroke-linejoin="round" />
+            <!-- Navigation Links -->
+            <div class="nav-links">
+              <a href="#testimonials" class="nav-link">التوصيات و الأعتمادات</a>
+              <a href="#for-whom" class="nav-link">لكل من</a>
+              <a href="#specialties" class="nav-link">التخصصات</a>
+              <a href="#why-us" class="nav-link">لماذا تختارنا</a>
+              <a href="#success-stories" class="nav-link">قصص نجاحنا</a>
+              <a href="#payment-methods" class="nav-link">طرق الدفع</a>
+            </div>
+
+            <!-- Logo -->
+            <div class="logo">
+              <div class="logo-text-small">أكاديمية</div>
+              <div class="logo-text-main">إعمل</div>
+              <div class="logo-text-accent">بيزنس</div>
+              <div class="logo-text-en">E3MEL BUSINESS ACADEMY</div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <!-- Right Side - Hero Text & Stats -->
+        <div class="hero-main">
+          <div class="hero-text">
+            <div class="dba-title">
+              <h1 class="dba-text">DBA</h1>
+              <div class="online-text">Online</div>
+              <div class="title-divider"></div>
+            </div>
+
+            <h2 class="hero-headline">
+              احصل على شهادة دبلومة معتمدة بخصم 20٪ الآن!
+            </h2>
+
+            <p class="hero-subtitle">
+              فرصة للتميز المهني وتطوير المهارات بأسعار ميسّرة وبرامج مرنة
+            </p>
+          </div>
+
+          <div class="stats-container">
+            <div class="stat-item">
+              <div class="stat-circle">
+                <div class="stat-number">150+</div>
+              </div>
+              <div class="stat-label">شهادات معتمدة</div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-circle">
+                <div class="stat-number">100+</div>
+              </div>
+              <div class="stat-label">شهادة ماجستير</div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-circle">
+                <div class="stat-number">500+</div>
+              </div>
+              <div class="stat-label">طالب أكاديمي</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left Side - Registration Form -->
+        <div class="registration-form">
+          <div class="form-header">
+            <h2 class="form-title">
+              سجل الآن و احصل علي <span class="highlight">شهادة معتمدة</span>
+            </h2>
+            <p class="form-description">
+              انضم إلى آلاف الأشخاص الذين طوروا مهاراتهم وحصلوا على شهادات
+              معتمدة تعزز فرصهم الوظيفية. سجل الآن وابدأ رحلتك نحو النجاح!
+            </p>
+          </div>
+
+          <form class="form">
+            <div class="form-field">
+              <label class="field-label">الاسم</label>
+              <input type="text" class="field-input" placeholder="اكتب اسمك" />
+            </div>
+
+            <div class="form-field">
+              <label class="field-label required">
+                رقم الهاتف
+                <svg
+                  class="required-icon"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                >
+                  <path
+                    d="M10.8601 6.53467H7.56011L9.91011 8.88467L9.21011 9.58467L6.86011 7.23467V10.5347H5.86011V7.18467L3.51011 9.53467L2.81011 8.83467L5.06011 6.53467H1.86011V5.53467H5.16011L2.81011 3.18467L3.51011 2.48467L5.86011 4.83467V1.53467H6.86011V4.73467L9.16011 2.43467L9.86011 3.18467L7.51011 5.53467H10.8601V6.53467Z"
+                    fill="#D84226"
+                  />
                 </svg>
+              </label>
+              <div class="phone-input">
+                <input
+                  type="tel"
+                  class="phone-field"
+                  placeholder="+05 (555) 000-0000"
+                />
+
+                <div class="phone-dropdown">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/be392643c8220ccd0ce1567e3ad7745c42e9ff3f?width=41"
+                    alt="SA Flag"
+                    class="country-flag"
+                  />
+                  <svg
+                    class="dropdown-icon"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 22 22"
+                    fill="none"
+                  >
+                    <path
+                      d="M5.71765 8.57227L10.8612 13.7158L16.0047 8.57227"
+                      stroke="#667085"
+                      stroke-width="1.41763"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="form-field">
-            <label class="field-label">البريد الإلكتروني</label>
-            <input type="email" class="field-input" placeholder="ex@example.com" />
-          </div>
+            <div class="form-field">
+              <label class="field-label">البريد الإلكتروني</label>
+              <input
+                type="email"
+                class="field-input"
+                placeholder="ex@example.com"
+              />
+            </div>
 
-          <button type="submit" class="submit-button">
-            سجّل الآن وابدأ رحلتك!
-          </button>
-        </form>
+            <button type="submit" class="submit-button">
+              سجّل الآن وابدأ رحلتك!
+            </button>
+          </form>
+        </div>
       </div>
+
+      <!-- Background Elements -->
+      <div class="background-overlay"></div>
+      <div class="background-circle"></div>
+      <img
+        src="./public/herosideImage.png"
+        alt="Student with laptop"
+        class="hero-image"
+      />
+      <!-- under shape of hero -->
     </div>
 
-    <!-- Background Elements -->
-    <div class="background-overlay"></div>
-    <div class="background-circle"></div>
-    <img src="./public/herosideImage.png" alt="Student with laptop" class="hero-image" />
-    <!-- under shape of hero -->
-  </div>
+    <!-- Add section placeholders for navigation links -->
+    <section id="testimonials" class="certificates-section-container relative">
+      <!-- ---------------- top shap ------------------ -->
+      <div class="certificates-section-ellipse-150"></div>
+      <!-- ---------------  button shap ------------------- -->
+      <div class="certificates-section-ellipse-152"></div>
 
+      <div class="certificates-section">
+        <div class="">
+          <img
+            src="/public/images/Ellipse 146.svg"
+            alt="Ellipse 146"
+            class="absolute object-contain top-0 right-0 z-1 max-sm:hidden"
+          />
+          <img
+            src="/public/images/Ellipse 147.svg"
+            alt="Ellipse 147"
+            class="absolute object-contain w-full top-0 right-0 z-1 hidden max-sm:block"
+          />
+        </div>
 
-  <!-- Add section placeholders for navigation links -->
-  <section id="testimonials" class="certificates-section-container relative">
-    
-    <!-- ---------------- top shap ------------------ -->
-    <div class="certificates-section-ellipse-150"></div>
-    <!-- ---------------  button shap ------------------- -->
-    <div class="certificates-section-ellipse-152"></div>
-
-    <div class="certificates-section">
-      <div class="">
-        <img src="/public/images/Ellipse 146.svg" alt="Ellipse 146"
-          class="absolute object-contain top-0 right-0 z-1 max-sm:hidden" />
-        <img src="/public/images/Ellipse 147.svg" alt="Ellipse 147"
-          class="absolute object-contain w-full top-0 right-0 z-1 hidden max-sm:block" />
-      </div>
-
-      <div class="mb-[-23px] w-full max-w-[1106px] max-md:max-w-full max-md:mb-2.5">
-        <div class="gap-5 flex max-md:flex-col max-md:items-stretch">
-
-          <!-- ------------------- section text ---------------------- -->
-          <div class="w-3/5 ml-5 max-md:w-full max-md:ml-0 md:text-center">
-            <div class="relative flex items-start w-full flex-col max-md:max-w-full max-md:mt-10 z-12">
-              <div class="flex w-[509px] max-w-full flex-col items-stretch text-right max-md:text-center rounded-[0px_0px_0px_0px]">
-                <h2 class="text-[#FCFCFC] text-[34px] font-medium leading-none">
-                  التوصيات و الإعتمادات
-                </h2>
-                <p class="text-[#F0F0F0] text-lg font-normal leading-8 mt-6 max-md:max-w-full">
-                  تُعد التوصيات والإعتمادات عاملين رئيسيين في بناء ثقة
-                  المتعلمين وضمان جودة أي برنامج تعليمي و اعتماد الشهادة من
-                  هيئات تعليمية دولية ومحلية. توافق البرنامج مع معايير التعليم
-                  والتدريب المهني و إمكانية استخدام الشهادة في الترقيات أو
-                  التقديم على وظائف جديدة.
-                </p>
-              </div>
+        <div
+          class="mb-[-23px] w-full max-w-[1106px] max-md:max-w-full max-md:mb-2.5"
+        >
+          <div class="gap-5 flex max-md:flex-col max-md:items-stretch">
+            <!-- ------------------- section text ---------------------- -->
+            <div class="w-3/5 ml-5 max-md:w-full max-md:ml-0 md:text-center">
               <div
-                class="bg-[#02B34F] flex gap-4 text-sm text-[#E8ECF4] font-semibold text-center leading-none mt-2 rounded-md max-md:hidden">
-                <button
-                  class="self-stretch shadow-[0px_1px_4px_0px_rgba(25,33,61,0.08)] gap-[3px] px-[18px] py-[15px] rounded-md"
-                  aria-label="احجز مكانك معانا">
-                  احجز مكانك معانا!
-                </button>
+                class="relative flex items-start w-full flex-col max-md:max-w-full max-md:mt-10 z-12"
+              >
+                <div
+                  class="flex w-[509px] max-w-full flex-col items-stretch text-right max-md:text-center rounded-[0px_0px_0px_0px]"
+                >
+                  <h2
+                    class="text-[#FCFCFC] text-[34px] font-medium leading-none"
+                  >
+                    التوصيات و الإعتمادات
+                  </h2>
+                  <p
+                    class="text-[#F0F0F0] text-lg font-normal leading-8 mt-6 max-md:max-w-full"
+                  >
+                    تُعد التوصيات والإعتمادات عاملين رئيسيين في بناء ثقة
+                    المتعلمين وضمان جودة أي برنامج تعليمي و اعتماد الشهادة من
+                    هيئات تعليمية دولية ومحلية. توافق البرنامج مع معايير التعليم
+                    والتدريب المهني و إمكانية استخدام الشهادة في الترقيات أو
+                    التقديم على وظائف جديدة.
+                  </p>
+                </div>
+                <div
+                  class="bg-[#02B34F] flex gap-4 text-sm text-[#E8ECF4] font-semibold text-center leading-none mt-2 rounded-md max-md:hidden"
+                >
+                  <button
+                    class="self-stretch shadow-[0px_1px_4px_0px_rgba(25,33,61,0.08)] gap-[3px] px-[18px] py-[15px] rounded-md"
+                    aria-label="احجز مكانك معانا"
+                  >
+                    احجز مكانك معانا!
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- ------------------- section images ---------------------- -->
-          <div class="w-2/5 max-md:w-full max-md:ml-0">
-            <div class="flex w-full flex-col self-stretch items-center my-auto max-md:mt-10">
-              <!-- Desktop layout: flex-wrap -->
-              <div class="hidden md:flex w-full max-w-[366px] items-center gap-[19px] justify-center flex-wrap flex-row-reverse">
-                <!-- Certificate 1 -->
+            <!-- ------------------- section images ---------------------- -->
+            <div class="w-2/5 max-md:w-full max-md:ml-0">
+              <div
+                class="flex w-full flex-col self-stretch items-center my-auto max-md:mt-10"
+              >
+                <!-- Desktop layout: flex-wrap -->
                 <div
-                  class="relative bg-[rgba(252,252,252,1)] self-stretch flex gap-[5px] overflow-hidden w-[108px] h-[108px] my-auto p-[19px] rounded-[13px]">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/d9d65cb7b71a198171bdf00faec3f05beb7c802b?placeholderIfAbsent=true"
-                    alt="Certificate 1" class="aspect-[1.01] object-contain w-[70px] relative z-12" />
-                </div>
-
-                <!-- Certificate 2 -->
-                <div
-                  class="relative bg-[rgba(252,252,252,1)] self-stretch flex gap-[5px] overflow-hidden w-[108px] h-[108px] my-auto p-3.5 rounded-[13px]">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/6dc4dfff03de415a96fca8951dd8e78542b5df4f?placeholderIfAbsent=true"
-                    alt="Certificate 2" class="aspect-[1] object-contain w-20 relative z-12" />
-                </div>
-
-                <!-- Certificate 3 -->
-                <div
-                  class="relative bg-[rgba(252,252,252,1)] self-stretch flex gap-[5px] overflow-hidden w-[108px] h-[108px] my-auto p-[18px] rounded-[13px]">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/07388f2190e40a4dbee786e893c2eb363070182c?placeholderIfAbsent=true"
-                    alt="Certificate 3" class="aspect-[1.01] object-contain w-[72px] relative z-12" />
-                </div>
-
-                <!-- Certificate 4 -->
-                <div
-                  class="relative bg-[rgba(252,252,252,1)] self-stretch flex gap-[5px] overflow-hidden w-[108px] h-[108px] my-auto px-2.5 rounded-[13px]">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/e5229036f0066f9fa09660b3de1f2d875d150aa6?placeholderIfAbsent=true"
-                    alt="Certificate 4" class="aspect-[1.45] object-contain w-[86px] relative z-12" />
-                </div>
-
-                <!-- Certificate 5 -->
-                <div
-                  class="relative bg-[rgba(252,252,252,1)] self-stretch flex gap-[5px] overflow-hidden w-[108px] h-[108px] my-auto p-3 rounded-[13px]">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/54c7906851fda3ecb72108569fd2b124f7663914?placeholderIfAbsent=true"
-                    alt="Certificate 5" class="aspect-[1] object-contain w-[83px] relative z-12" />
-                </div>
-
-                <!-- Certificate 6 -->
-                <div
-                  class="relative bg-[rgba(252,252,252,1)] self-stretch flex gap-[5px] overflow-hidden w-[108px] h-[108px] my-auto p-[13px] rounded-[13px]">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/367d0d2ab6b7610b6846837062e81f8783235319?placeholderIfAbsent=true"
-                    alt="Certificate 6" class="aspect-[1] object-contain w-20 relative z-12" />
-                </div>
-              </div>
-
-              <!-- Mobile layout: specific arrangement -->
-              <div class="flex md:hidden w-full max-w-[366px] flex-col items-center gap-[19px]">
-                <!-- Top row: 3 certificates -->
-                <div class="flex gap-[19px] justify-center">
-                  <!-- Certificate 1 (IFTDO) -->
+                  class="hidden md:flex w-full max-w-[366px] items-center gap-[19px] justify-center flex-wrap flex-row-reverse"
+                >
+                  <!-- Certificate 1 -->
                   <div
-                    class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-[19px] rounded-[13px]">
-                    <img
-                      src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/d9d65cb7b71a198171bdf00faec3f05beb7c802b?placeholderIfAbsent=true"
-                      alt="Certificate 1" class="aspect-[1.01] object-contain w-[70px] relative z-12" />
+                    class="relative bg-[rgba(252,252,252,1)] self-stretch flex gap-[5px] overflow-hidden w-[108px] h-[108px] my-auto p-[19px] rounded-[13px]"
+                  >
+                    
                   </div>
 
-                  <!-- Certificate 2 (IAO) -->
+                  <!-- Certificate 2 -->
                   <div
-                    class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-3.5 rounded-[13px]">
+                    class="relative bg-[rgba(252,252,252,1)] self-stretch flex gap-[5px] overflow-hidden w-[108px] h-[108px] my-auto p-3.5 rounded-[13px]"
+                  >
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/6dc4dfff03de415a96fca8951dd8e78542b5df4f?placeholderIfAbsent=true"
-                      alt="Certificate 2" class="aspect-[1] object-contain w-20 relative z-12" />
+                      alt="Certificate 2"
+                      class="aspect-[1] object-contain w-20 relative z-12"
+                    />
                   </div>
 
-                  <!-- Certificate 3 (Red circle) -->
+                  <!-- Certificate 3 -->
                   <div
-                    class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-[18px] rounded-[13px]">
+                    class="relative bg-[rgba(252,252,252,1)] self-stretch flex gap-[5px] overflow-hidden w-[108px] h-[108px] my-auto p-[18px] rounded-[13px]"
+                  >
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/07388f2190e40a4dbee786e893c2eb363070182c?placeholderIfAbsent=true"
-                      alt="Certificate 3" class="aspect-[1.01] object-contain w-[72px] relative z-12" />
+                      alt="Certificate 3"
+                      class="aspect-[1.01] object-contain w-[72px] relative z-12"
+                    />
                   </div>
-                </div>
 
-                <!-- Middle row: 2 certificates -->
-                <div class="flex gap-[19px] justify-center">
                   <!-- Certificate 4 -->
                   <div
-                    class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] px-2.5 rounded-[13px]">
+                    class="relative bg-[rgba(252,252,252,1)] self-stretch flex gap-[5px] overflow-hidden w-[108px] h-[108px] my-auto px-2.5 rounded-[13px]"
+                  >
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/e5229036f0066f9fa09660b3de1f2d875d150aa6?placeholderIfAbsent=true"
-                      alt="Certificate 4" class="aspect-[1.45] object-contain w-[86px] relative z-12" />
+                      alt="Certificate 4"
+                      class="aspect-[1.45] object-contain w-[86px] relative z-12"
+                    />
                   </div>
 
                   <!-- Certificate 5 -->
                   <div
-                    class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-3 rounded-[13px]">
+                    class="relative bg-[rgba(252,252,252,1)] self-stretch flex gap-[5px] overflow-hidden w-[108px] h-[108px] my-auto p-3 rounded-[13px]"
+                  >
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/54c7906851fda3ecb72108569fd2b124f7663914?placeholderIfAbsent=true"
-                      alt="Certificate 5" class="aspect-[1] object-contain w-[83px] relative z-12" />
+                      alt="Certificate 5"
+                      class="aspect-[1] object-contain w-[83px] relative z-12"
+                    />
                   </div>
-                </div>
 
-                <!-- Bottom row: 1 certificate -->
-                <div class="flex justify-center">
                   <!-- Certificate 6 -->
                   <div
-                    class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-[13px] rounded-[13px]">
+                    class="relative bg-[rgba(252,252,252,1)] self-stretch flex gap-[5px] overflow-hidden w-[108px] h-[108px] my-auto p-[13px] rounded-[13px]"
+                  >
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/367d0d2ab6b7610b6846837062e81f8783235319?placeholderIfAbsent=true"
-                      alt="Certificate 6" class="aspect-[1] object-contain w-20 relative z-12" />
+                      alt="Certificate 6"
+                      class="aspect-[1] object-contain w-20 relative z-12"
+                    />
+                  </div>
+                </div>
+
+                <!-- Mobile layout: specific arrangement -->
+                <div
+                  class="flex md:hidden w-full max-w-[366px] flex-col items-center gap-[19px]"
+                >
+                  <!-- Top row: 3 certificates -->
+                  <div class="flex gap-[19px] justify-center">
+                    <!-- Certificate 1 (IFTDO) -->
+                    <div
+                      class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-[19px] rounded-[13px]"
+                    >
+                      <img
+                        src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/d9d65cb7b71a198171bdf00faec3f05beb7c802b?placeholderIfAbsent=true"
+                        alt="Certificate 1"
+                        class="aspect-[1.01] object-contain w-[70px] relative z-12"
+                      />
+                    </div>
+
+                    <!-- Certificate 2 (IAO) -->
+                    <div
+                      class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-3.5 rounded-[13px]"
+                    >
+                      <img
+                        src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/6dc4dfff03de415a96fca8951dd8e78542b5df4f?placeholderIfAbsent=true"
+                        alt="Certificate 2"
+                        class="aspect-[1] object-contain w-20 relative z-12"
+                      />
+                    </div>
+
+                    <!-- Certificate 3 (Red circle) -->
+                    <div
+                      class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-[18px] rounded-[13px]"
+                    >
+                      <img
+                        src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/07388f2190e40a4dbee786e893c2eb363070182c?placeholderIfAbsent=true"
+                        alt="Certificate 3"
+                        class="aspect-[1.01] object-contain w-[72px] relative z-12"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Middle row: 2 certificates -->
+                  <div class="flex gap-[19px] justify-center">
+                    <!-- Certificate 4 -->
+                    <div
+                      class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] px-2.5 rounded-[13px]"
+                    >
+                      <img
+                        src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/e5229036f0066f9fa09660b3de1f2d875d150aa6?placeholderIfAbsent=true"
+                        alt="Certificate 4"
+                        class="aspect-[1.45] object-contain w-[86px] relative z-12"
+                      />
+                    </div>
+
+                    <!-- Certificate 5 -->
+                    <div
+                      class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-3 rounded-[13px]"
+                    >
+                      <img
+                        src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/54c7906851fda3ecb72108569fd2b124f7663914?placeholderIfAbsent=true"
+                        alt="Certificate 5"
+                        class="aspect-[1] object-contain w-[83px] relative z-12"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Bottom row: 1 certificate -->
+                  <div class="flex justify-center">
+                    <!-- Certificate 6 -->
+                    <div
+                      class="relative bg-[rgba(252,252,252,1)] flex gap-[5px] overflow-hidden w-[108px] h-[108px] p-[13px] rounded-[13px]"
+                    >
+                      <img
+                        src="https://cdn.builder.io/api/v1/image/assets/8db68aff16c541a7b1ccc14db1396f19/367d0d2ab6b7610b6846837062e81f8783235319?placeholderIfAbsent=true"
+                        alt="Certificate 6"
+                        class="aspect-[1] object-contain w-20 relative z-12"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Our Programs Section -->
-  <section id="for-whom" class="our-programs-section">
-    <div class="our-programs-container">
-      <h3 class="our-programs-title ">
-        برنامجنا مخصص لكل من:
-      </h3>
-      
-      <div class="our-programs-content">
-        <div class="our-programs-grid">
-          <!-- Program 1 -->
-          <div class="our-programs-card">
-            <div class="our-programs-image-container">
-              <img src="./public/images/Group.png" alt="المحترفين في مجالهم" class="our-programs-image" />
-            </div>
-            <h4 class="our-programs-card-title">المحترفين في مجالهم</h4>
-          </div>
+    <!-- Our Programs Section -->
+    <section id="for-whom" class="our-programs-section">
+      <div class="our-programs-container">
+        <h3 class="our-programs-title">برنامجنا مخصص لكل من:</h3>
 
-          <!-- Program 2 -->
-          <div class="our-programs-card">
-            <div class="our-programs-image-container">
-              <img src="./public/images/Frame.png" alt="الباحثين عن وظائف" class="our-programs-image" />
-            </div>
-            <h4 class="our-programs-card-title">الباحثين عن وظائف</h4>
-          </div>
-
-          <!-- Program 3 -->
-          <div class="our-programs-card">
-            <div class="our-programs-image-container">
-              <img src="./public/images/Group22.png" alt="المهنيين العاملين" class="our-programs-image" />
-            </div>
-            <h4 class="our-programs-card-title">المهنيين العاملين</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MBA Program Section -->
-  <section id="specialties" class="mba-program-section">
-    <img src="./public/images/Ellipse 158.svg" alt="shadow" class="mba-program-section-large-shape" />
-    <img src="./public/images/Ellipse 157.svg" alt="shadow" class="mba-program-section-large-shape-mobile" />
-
-    <div class="mba-program-container">
-      <h1 class="mba-program-title">
-        <span class="title-blue">معًا نحو أعلى المناصب</span>
-        <span class="title-green"> بالسعودية!</span>
-      </h1>
-      
-      <p class="mba-program-description">
-        احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:
-      </p>
-
-      <img src="./public/images/Ellipse 1446.svg" alt="mba program section bg" class="mba-program-bg-large" />
-      <img src="./public/images/MbaProgramSection-small-shap.svg" alt="mba program small bg" class="mba-program-bg-small" />
-
-      <div class="mba-program-content">
-        <!-- Right Side - Text Content -->
-        <div class="mba-program-text">
-          <div class="mba-info-items-desktop">
-            <p class="mba-info-item">احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:</p>
-            <p class="mba-info-item">احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:</p>
-            <p class="mba-info-item">احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:</p>
-            <p class="mba-info-item">احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:</p>
-            <p class="mba-info-item">احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:</p>
-          </div>
-
-          <div class="mba-info-items-mobile">
-            <p class="mba-info-item">احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:</p>
-            <p class="mba-info-item">احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:</p>
-            <p class="mba-info-item">احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:</p>
-          </div>
-
-          <button class="mba-register-button">
-            سجل الآن وابدأ رحلتك!
-          </button>
-        </div>
-
-        <!-- Left Side - Grid Layout -->
-        <div class="mba-program-grid-container">
-          <div class="mba-program-grid">
-            <!-- إدارة الاعمال -->
-            <div class="mba-specialization-card business-card">
-              <div class="mba-card-content">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d21b30a87d866c9ceacccbe5fa6af55b5c5b97eb?placeholderIfAbsent=true" alt="إدارة الاعمال" class="mba-card-image" />
-                <div class="mba-card-overlay">
-                  <h3 class="mba-card-title">إدارة الاعمال</h3>
-                  <p class="mba-card-description">
-                    تركز دورة "الإدارة الأعمال" على تزويد المشاركين بالمعارف والمهارات اللازمة لفهم وتطبيق المفاهيم والأساليب الحديثة في مجال الإدارة. تهدف هذه الدورة إلى تأهيل المديرين الجدد والمرشحين لشغل مناصب إدارية.
-                  </p>
-                </div>
+        <div class="our-programs-content">
+          <div class="our-programs-grid">
+            <!-- Program 1 -->
+            <div class="our-programs-card">
+              <div class="our-programs-image-container">
+                <img
+                  src="./public/images/Group.png"
+                  alt="المحترفين في مجالهم"
+                  class="our-programs-image"
+                />
               </div>
+              <h4 class="our-programs-card-title">المحترفين في مجالهم</h4>
             </div>
 
-            <!-- التسويق -->
-            <div class="mba-specialization-card marketing-card">
-              <div class="mba-card-content">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/51636427a3ab9ee5f9df320e89c6698e0f3870f9?placeholderIfAbsent=true" alt="التسويق" class="mba-card-image" />
-                <div class="mba-card-overlay">
-                  <h3 class="mba-card-title">التسويق</h3>
-                  <p class="mba-card-description">
-                    تركز دورة التسويق على فهم سلوك المستهلك وتطوير استراتيجيات التسويق الفعالة. تغطي الدورة أحدث التقنيات والأدوات في التسويق الرقمي وإدارة العلامات التجارية.
-                  </p>
-                </div>
+            <!-- Program 2 -->
+            <div class="our-programs-card">
+              <div class="our-programs-image-container">
+                <img
+                  src="./public/images/Frame.png"
+                  alt="الباحثين عن وظائف"
+                  class="our-programs-image"
+                />
               </div>
+              <h4 class="our-programs-card-title">الباحثين عن وظائف</h4>
             </div>
 
-            <!-- التمويل و البنوك -->
-            <div class="mba-specialization-card finance-card">
-              <div class="mba-card-content">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9b650d5f11b680b1c30415af2322aeffb5694d69?placeholderIfAbsent=true" alt="التمويل و البنوك" class="mba-card-image" />
-                <div class="mba-card-overlay">
-                  <h3 class="mba-card-title">التمويل و البنوك</h3>
-                  <p class="mba-card-description">
-                    تقدم دورة التمويل والبنوك فهماً عميقاً للأسواق المالية والعمليات المصرفية. تشمل مواضيع مثل إدارة المخاطر، التحليل المالي، والاستثمار.
-                  </p>
-                </div>
+            <!-- Program 3 -->
+            <div class="our-programs-card">
+              <div class="our-programs-image-container">
+                <img
+                  src="./public/images/Group22.png"
+                  alt="المهنيين العاملين"
+                  class="our-programs-image"
+                />
               </div>
-            </div>
-
-            <!-- سلاسل الإمداد -->
-            <div class="mba-specialization-card supply-card">
-              <div class="mba-card-content">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fa64d3a0b3b14bdbb7143fa6d8f9de7f7d8a3fd2?placeholderIfAbsent=true" alt="سلاسل الإمداد" class="mba-card-image" />
-                <div class="mba-card-overlay">
-                  <h3 class="mba-card-title">سلاسل الإمداد</h3>
-                  <p class="mba-card-description">
-                    تغطي دورة سلاسل الإمداد جميع جوانب إدارة سلسلة التوريد، من التخطيط إلى التنفيذ. تركز على تحسين الكفاءة وتقليل التكاليف في العمليات اللوجستية.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- إدارة الموارد البشرية -->
-            <div class="mba-specialization-card hr-card">
-              <div class="mba-card-content">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2f33c53567f8bcc5b17b9f3ea7cecfcdce505cbc?placeholderIfAbsent=true" alt="إدارة الموارد البشرية" class="mba-card-image" />
-                <div class="mba-card-overlay">
-                  <h3 class="mba-card-title">إدارة الموارد البشرية</h3>
-                  <p class="mba-card-description">
-                    تركز دورة إدارة الموارد البشرية على تطوير مهارات إدارة وتنمية الموظفين. تشمل مواضيع مثل التوظيف، التدريب، تقييم الأداء، وتطوير المواهب.
-                  </p>
-                </div>
-              </div>
+              <h4 class="our-programs-card-title">المهنيين العاملين</h4>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Choose Our Program Section -->
-  <section id="why-us" class="choose-our-program-section">
-    <div class="choose-our-program-content">
+    <!-- MBA Program Section -->
+    <section id="specialties" class="mba-program-section">
       <img
-        src="./public/images/ChooseOurProgram-side-shap.svg"
-        alt="side shape in large screen"
-        class="absolute object-contain top-[0px] right-0 z-[0] max-sm:hidden h-[100%]"
+        src="./public/images/Ellipse 158.svg"
+        alt="shadow"
+        class="mba-program-section-large-shape"
       />
       <img
-        src="./public/images/ChooseOurProgram-side-shap-small.svg"
-        alt="side shape in small screen"
-        class="absolute object-contain w-[80%] top-[0px] right-0 z-1 hidden max-sm:block"
+        src="./public/images/Ellipse 157.svg"
+        alt="shadow"
+        class="mba-program-section-large-shape-mobile"
       />
 
-      <img
-        src="./public/images/Ellipse 1590.svg"
-        alt="top curve shape in large screen"
-        class="absolute object-contain max-sm:hidden top-[-146px] left-0 w-full z-10"
-      />
+      <div class="mba-program-container">
+        <h1 class="mba-program-title">
+          <span class="title-blue">معًا نحو أعلى المناصب</span>
+          <span class="title-green"> بالسعودية!</span>
+        </h1>
 
-      <!-- top shape on small -->
-      <img
-        src="./public/images/choose-our-program-top-cerve-small.svg"
-        alt="top curve shape on small screen"
-        class="absolute object-contain max-sm:block md:hidden top-[-50px] left-0 w-full z-10"
-      />
-
-      <img
-        src="./public/images/Ellipse 153-1.svg"
-        alt="bottom curve shape"
-        class="absolute object-contain bottom-[-100px] left-0 w-full max-sm:w-screen max-sm:object-cover z-10"
-      />
-      <!-- bottom curve shape on small screen -->
-      <img
-        src="./public/images/choose-our-program-bottom-cerver-small.svg"
-        alt="bottom curve shape on small screen"
-        class="absolute object-contain max-sm:block md:hidden bottom-[-50px] left-0 w-full z-10"
-      />
-
-      <div class="choose-our-program-first-part">
-        <div class="choose-our-program-first-part-content">
-          <h1 class="choose-our-program-title">
-            <span class="choose-our-program-title-first-part">
-              ليش تختار
-            </span>
-            <span class="choose-our-program-title-second-part">
-              برنامجنا؟
-            </span>
-          </h1>
-          <p class="choose-our-program-description">
-            "لأننا نوفر لك شهادة معتمدة دولياً، محتوى عملي يناسب سوق العمل،
-            مرونة تامة في الدراسة، وأسعار ميسّرة مع خيارات تقسيط مريحة. كل
-            هذا يساعدك على تحقيق أهدافك المهنية والشخصية بكل سهولة."
-          </p>
-        </div>
-      </div>
-
-      <div class="choose-our-program-second-part">
-        <!-- Card 1: فرص لزيادة الرواتب والترقيات -->
-        <div class="choose-our-program-card" style="grid-area: money;">
-          <img
-            src="./public/images/Ellipse 152.png"
-            alt="money"
-            class="choose-our-program-card-shape"
-          />
-          <div class="choose-our-program-card-content">
-            <img
-              src="./public/images/money.png"
-              alt="money"
-              class="choose-our-program-card-image"
-            />
-            <h2 class="choose-our-program-card-title">
-              فرص لزيادة الرواتب والترقيات.
-            </h2>
-            <p class="choose-our-program-card-description">
-              توفر فرص الراتب بعد البرنامج التعليمي
-            </p>
-          </div>
-        </div>
-
-        <!-- Card 2: تطوير المهارات -->
-        <div class="choose-our-program-card" style="grid-area: skills;">
-          <img
-            src="./public/images/Ellipse 151.png"
-            alt="skills"
-            class="choose-our-program-card-shape"
-          />
-          <div class="choose-our-program-card-content">
-            <img
-              src="./public/images/positive-thinking.png"
-              alt="skills"
-              class="choose-our-program-card-image"
-            />
-            <h2 class="choose-our-program-card-title">
-              تطوير المهارات
-            </h2>
-            <p class="choose-our-program-card-description">
-              مع اخذ اي برنامج تعليمي تزداد ثقتك و تطويرك
-            </p>
-          </div>
-        </div>
-
-        <!-- Card 3: شهادات معتمدة -->
-        <div class="choose-our-program-card" style="grid-area: certificate;">
-          <img
-            src="./public/images/Ellipse 152.png"
-            alt="certificate"
-            class="choose-our-program-card-shape"
-          />
-          <div class="choose-our-program-card-content">
-            <img
-              src="./public/images/Group-2.png"
-              alt="certificate"
-              class="choose-our-program-card-image"
-            />
-            <h2 class="choose-our-program-card-title">
-              شهادات معتمدة
-            </h2>
-            <p class="choose-our-program-card-description">
-              اكثر من 25+ شهادة معتمدة
-            </p>
-          </div>
-        </div>
-
-        <!-- Card 4: برامج مرنة تناسب حياتك -->
-        <div class="choose-our-program-card" style="grid-area: flexible;">
-          <img
-            src="./public/images/Ellipse 151.png"
-            alt="flexible"
-            class="choose-our-program-card-shape"
-          />
-          <div class="choose-our-program-card-content">
-            <img
-              src="./public/images/time-management.png"
-              alt="flexible"
-              class="choose-our-program-card-image"
-            />
-            <h2 class="choose-our-program-card-title">
-              برامج مرنة تناسب حياتك.
-            </h2>
-            <p class="choose-our-program-card-description">
-              يمكنك ان توقف البرنامج و استكماله اي وقت
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="success-stories" class="testimonials-section">
-    <div class="testimonials-subtitle">أكثر من +150 ألف عميل راضيين</div>
-    <h2 class="testimonials-title">
-      قصص
-      <p>نجاح</p>
-      طلابنا
-    </h2>
-    <div class="testimonials-container">
-      <!-- Testimonial 1 -->
-      <div class="testimonial-card">
-        <div class="star-rating">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-        </div>
-        <p class="testimonial-text">بصراحة، برنامج الماجستير كان أفضل قرار اتخذته! تعلمت مهارات جديدة ساعدتني أتطور وأرتقى في وظيفتي. أكثر شي عجبني إنه البرنامج مرن، قدرت أدرس واشتغل بنفس الوقت.</p>
-        <div class="author-info">
-          <img src="./public/images/Oval-2.png" alt="محمد العتيبي" class="author-image" />
-          <div class="author-details">
-            <div class="author-name">محمد العتيبي</div>
-            <div class="author-title">مدير مشاريع</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial 2 -->
-      <div class="testimonial-card">
-        <div class="star-rating">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-        </div>
-        <p class="testimonial-text">الماجستير كان تجربة رهيبة! المحتوى كان عملي وبسيط وساعدني أطور نفسي في شغلي. بعد ما خلصت البرنامج، حصلت على وظيفة براتب أحسن، وصرت أشتغل بثقة كبيرة.</p>
-        <div class="author-info">
-          <img src="./public/images/Oval-1.png" alt="سارة القحطاني" class="author-image" />
-          <div class="author-details">
-            <div class="author-name">سارة القحطاني</div>
-            <div class="author-title">أخصائية تسويق رقمي</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial 3 -->
-      <div class="testimonial-card">
-        <div class="star-rating">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-        </div>
-        <p class="testimonial-text">البرنامج غير حياتي! تعلمت أشياء ما كنت أتخيل إنها تفيدني بهالشكل في حياتي المهنية. بعد ما خلصت الماجستير، صرت مشرف في الشركة وأدير فريق كامل.</p>
-        <div class="author-info">
-          <img src="./public/images/Oval.png" alt="عبدالله الدوسري" class="author-image" />
-          <div class="author-details">
-            <div class="author-name">عبدالله الدوسري</div>
-            <div class="author-title">مشرف عمليات</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Payment Methods Section -->
-  <section id="payment-methods" class="payment-section">
-    <!-- shadow in bottom in large screen -->
-    <img
-      src="./public/images/OurStudentsStories_buttom_shap.svg"
-      alt="shadow"
-      class="bottom-shadow"
-    />
-
-    <!-- shadow in bottom in small screen -->
-    <img
-      src="./public/images/OurStudentsStories_buttom_shap.svg"
-      alt="shadow"
-      class="bottom-shadow-small"
-    />
-
-    <div class="content-container">
-      <div class="text-content">
-        <h2>الدفع بالطريقة المناسبة لك!</h2>
-        <p>
-          اعمل بيزنس بتوفرلك طرق دفع كتيرة حتى تختار ما يناسبك من اي طريقة و
-          تسهيل الدفع للتعليم الفوري و عدم التعقيد
+        <p class="mba-program-description">
+          احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من جامعة
+          مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:
         </p>
-        <button class="cta-button">احجز مكانك معانا!</button>
-      </div>
-      <div class="cards-container">
-        <div class="card mastercard">
-          <div class="refund-badge">
-            Master
-            <br />
-            Card
-          </div>
-          <img src="./public/images/mastercard-logo.png" alt="Mastercard" />
-        </div>
-        <div class="card visa">
-          <div class="refund-badge">Visa</div>
-          <img src="./public/images/visa-logo.png" alt="Visa" />
-        </div>
-        <div class="card cash">
-          <div class="refund-badge">
-            دفع
-            <br />
-            كامل
-          </div>
-          <img src="./public/images/cash-icon.png" alt="Cash Payment" />
-        </div>
-        <div class="card coins">
-          <div class="refund-badge">
-            ١٠٠٪
-            <br />
-            استرجاع
-          </div>
-          <img src="./public/images/refund-icon.png" alt="Refund" />
-        </div>
-      </div>
 
-      <button class="cta-button-small">احجز مكانك معانا!</button>
-    </div>
-  </section>
+        <img
+          src="./public/images/Ellipse 1446.svg"
+          alt="mba program section bg"
+          class="mba-program-bg-large"
+        />
+        <img
+          src="./public/images/MbaProgramSection-small-shap.svg"
+          alt="mba program small bg"
+          class="mba-program-bg-small"
+        />
 
-  <!-- Footer Section -->
-  <footer class="new-footer-section">
-    <div class="new-footer-container">
-      <div class="new-footer-grid">
-        
-        <!-- العمود الأول: اللوجو والوصف -->
-        <div class="footer-column footer-about">
-          <!-- اللوجو -->
-          <div class="footer-brand">
-            <div class="footer-logo-container">
+        <div class="mba-program-content">
+          <!-- Right Side - Text Content -->
+          <div class="mba-program-text">
+            <div class="mba-info-items-desktop">
+              <p class="mba-info-item">
+                احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من
+                جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:
+              </p>
+              <p class="mba-info-item">
+                احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من
+                جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:
+              </p>
+              <p class="mba-info-item">
+                احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من
+                جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:
+              </p>
+              <p class="mba-info-item">
+                احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من
+                جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:
+              </p>
+              <p class="mba-info-item">
+                احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من
+                جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:
+              </p>
+            </div>
+
+            <div class="mba-info-items-mobile">
+              <p class="mba-info-item">
+                احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من
+                جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:
+              </p>
+              <p class="mba-info-item">
+                احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من
+                جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:
+              </p>
+              <p class="mba-info-item">
+                احصل على شهادة الماجستير المهني في إدارة الأعمال MBA المعتمدة من
+                جامعة مارا للتكنولوجيا في ماليزيا واختر من بين 5 تخصصات متنوعة:
+              </p>
+            </div>
+
+            <button class="mba-register-button">سجل الآن وابدأ رحلتك!</button>
+          </div>
+
+          <!-- Left Side - Grid Layout -->
+          <div class="mba-program-grid-container">
+            <div class="mba-program-grid">
+              <!-- إدارة الاعمال -->
+              <div class="mba-specialization-card business-card">
+                <div class="mba-card-content">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/d21b30a87d866c9ceacccbe5fa6af55b5c5b97eb?placeholderIfAbsent=true"
+                    alt="إدارة الاعمال"
+                    class="mba-card-image"
+                  />
+                  <div class="mba-card-overlay">
+                    <h3 class="mba-card-title">إدارة الاعمال</h3>
+                    <p class="mba-card-description">
+                      تركز دورة "الإدارة الأعمال" على تزويد المشاركين بالمعارف
+                      والمهارات اللازمة لفهم وتطبيق المفاهيم والأساليب الحديثة
+                      في مجال الإدارة. تهدف هذه الدورة إلى تأهيل المديرين الجدد
+                      والمرشحين لشغل مناصب إدارية.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- التسويق -->
+              <div class="mba-specialization-card marketing-card">
+                <div class="mba-card-content">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/51636427a3ab9ee5f9df320e89c6698e0f3870f9?placeholderIfAbsent=true"
+                    alt="التسويق"
+                    class="mba-card-image"
+                  />
+                  <div class="mba-card-overlay">
+                    <h3 class="mba-card-title">التسويق</h3>
+                    <p class="mba-card-description">
+                      تركز دورة التسويق على فهم سلوك المستهلك وتطوير استراتيجيات
+                      التسويق الفعالة. تغطي الدورة أحدث التقنيات والأدوات في
+                      التسويق الرقمي وإدارة العلامات التجارية.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- التمويل و البنوك -->
+              <div class="mba-specialization-card finance-card">
+                <div class="mba-card-content">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/9b650d5f11b680b1c30415af2322aeffb5694d69?placeholderIfAbsent=true"
+                    alt="التمويل و البنوك"
+                    class="mba-card-image"
+                  />
+                  <div class="mba-card-overlay">
+                    <h3 class="mba-card-title">التمويل و البنوك</h3>
+                    <p class="mba-card-description">
+                      تقدم دورة التمويل والبنوك فهماً عميقاً للأسواق المالية
+                      والعمليات المصرفية. تشمل مواضيع مثل إدارة المخاطر، التحليل
+                      المالي، والاستثمار.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- سلاسل الإمداد -->
+              <div class="mba-specialization-card supply-card">
+                <div class="mba-card-content">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/fa64d3a0b3b14bdbb7143fa6d8f9de7f7d8a3fd2?placeholderIfAbsent=true"
+                    alt="سلاسل الإمداد"
+                    class="mba-card-image"
+                  />
+                  <div class="mba-card-overlay">
+                    <h3 class="mba-card-title">سلاسل الإمداد</h3>
+                    <p class="mba-card-description">
+                      تغطي دورة سلاسل الإمداد جميع جوانب إدارة سلسلة التوريد، من
+                      التخطيط إلى التنفيذ. تركز على تحسين الكفاءة وتقليل
+                      التكاليف في العمليات اللوجستية.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- إدارة الموارد البشرية -->
+              <div class="mba-specialization-card hr-card">
+                <div class="mba-card-content">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/2f33c53567f8bcc5b17b9f3ea7cecfcdce505cbc?placeholderIfAbsent=true"
+                    alt="إدارة الموارد البشرية"
+                    class="mba-card-image"
+                  />
+                  <div class="mba-card-overlay">
+                    <h3 class="mba-card-title">إدارة الموارد البشرية</h3>
+                    <p class="mba-card-description">
+                      تركز دورة إدارة الموارد البشرية على تطوير مهارات إدارة
+                      وتنمية الموظفين. تشمل مواضيع مثل التوظيف، التدريب، تقييم
+                      الأداء، وتطوير المواهب.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Choose Our Program Section -->
+    <section id="why-us" class="choose-our-program-section">
+      <div class="choose-our-program-content">
+        <img
+          src="./public/images/ChooseOurProgram-side-shap.svg"
+          alt="side shape in large screen"
+          class="absolute object-contain top-[0px] right-0 z-[0] max-sm:hidden h-[100%]"
+        />
+        <img
+          src="./public/images/ChooseOurProgram-side-shap-small.svg"
+          alt="side shape in small screen"
+          class="absolute object-contain w-[80%] top-[0px] right-0 z-1 hidden max-sm:block"
+        />
+
+        <img
+          src="./public/images/Ellipse 1590.svg"
+          alt="top curve shape in large screen"
+          class="absolute object-contain max-sm:hidden top-[-146px] left-0 w-full z-10"
+        />
+
+        <!-- top shape on small -->
+        <img
+          src="./public/images/choose-our-program-top-cerve-small.svg"
+          alt="top curve shape on small screen"
+          class="absolute object-contain max-sm:block md:hidden top-[-50px] left-0 w-full z-10"
+        />
+
+        <img
+          src="./public/images/Ellipse 153-1.svg"
+          alt="bottom curve shape"
+          class="absolute object-contain bottom-[-100px] left-0 w-full max-sm:w-screen max-sm:object-cover z-10"
+        />
+        <!-- bottom curve shape on small screen -->
+        <img
+          src="./public/images/choose-our-program-bottom-cerver-small.svg"
+          alt="bottom curve shape on small screen"
+          class="absolute object-contain max-sm:block md:hidden bottom-[-50px] left-0 w-full z-10"
+        />
+
+        <div class="choose-our-program-first-part">
+          <div class="choose-our-program-first-part-content">
+            <h1 class="choose-our-program-title">
+              <span class="choose-our-program-title-first-part">
+                ليش تختار
+              </span>
+              <span class="choose-our-program-title-second-part">
+                برنامجنا؟
+              </span>
+            </h1>
+            <p class="choose-our-program-description">
+              "لأننا نوفر لك شهادة معتمدة دولياً، محتوى عملي يناسب سوق العمل،
+              مرونة تامة في الدراسة، وأسعار ميسّرة مع خيارات تقسيط مريحة. كل هذا
+              يساعدك على تحقيق أهدافك المهنية والشخصية بكل سهولة."
+            </p>
+          </div>
+        </div>
+
+        <div class="choose-our-program-second-part">
+          <!-- Card 1: فرص لزيادة الرواتب والترقيات -->
+          <div class="choose-our-program-card" style="grid-area: money">
+            <img
+              src="./public/images/Ellipse 152.png"
+              alt="money"
+              class="choose-our-program-card-shape"
+            />
+            <div class="choose-our-program-card-content">
               <img
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/5413cecfffcb7dec26ccb69e0d41b01f3522adb8?width=300"
-                alt="أكاديمية إعمل بيزنس"
-                class="footer-brand-logo"
+                src="./public/images/money.png"
+                alt="money"
+                class="choose-our-program-card-image"
               />
+              <h2 class="choose-our-program-card-title">
+                فرص لزيادة الرواتب والترقيات.
+              </h2>
+              <p class="choose-our-program-card-description">
+                توفر فرص الراتب بعد البرنامج التعليمي
+              </p>
             </div>
           </div>
-          
-          <!-- النص التعريفي -->
-          <p class="footer-about-text">
-            أكاديمية إعمل بيزنس هي حلم لم يفارق عقل وقلب كل فرد منا في
-            فريق إعمل بيزنس وسعينا جميعاً بكل قوة وإيمان إلى تحقيقه ونقله
-            من عالم الأحلام إلى الواقع الملموس.
-          </p>
-          
-          <!-- أيقونات السوشيال ميديا -->
-          <div class="footer-social-icons">
-            <a href="#" class="footer-social-link">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="white"/>
-              </svg>
-            </a>
-            <a href="#" class="footer-social-link">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="white"/>
-              </svg>
-            </a>
-            <a href="#" class="footer-social-link">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="white"/>
-              </svg>
-            </a>
-            <a href="#" class="footer-social-link">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" fill="white"/>
-              </svg>
-            </a>
-            <a href="#" class="footer-social-link">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488" fill="white"/>
-              </svg>
-            </a>
+
+          <!-- Card 2: تطوير المهارات -->
+          <div class="choose-our-program-card" style="grid-area: skills">
+            <img
+              src="./public/images/Ellipse 151.png"
+              alt="skills"
+              class="choose-our-program-card-shape"
+            />
+            <div class="choose-our-program-card-content">
+              <img
+                src="./public/images/positive-thinking.png"
+                alt="skills"
+                class="choose-our-program-card-image"
+              />
+              <h2 class="choose-our-program-card-title">تطوير المهارات</h2>
+              <p class="choose-our-program-card-description">
+                مع اخذ اي برنامج تعليمي تزداد ثقتك و تطويرك
+              </p>
+            </div>
           </div>
-        </div>
 
-        <!-- العمود الثاني: روابط سريعة -->
-        <div class="footer-column footer-links">
-          <h3 class="footer-column-title">روابط سريعة</h3>
-          <ul class="footer-links-list">
-            <li><a href="#testimonials" class="footer-link">الاستطلاعات عن الشهادات</a></li>
-            <li><a href="#for-whom" class="footer-link">المحاضرين</a></li>
-            <li><a href="#specialties" class="footer-link">آراء العملاء</a></li>
-            <li><a href="#why-us" class="footer-link">الشروط والأحكام</a></li>
-            <li><a href="#success-stories" class="footer-link">الأسئلة الشائعة</a></li>
-            <li><a href="#payment-methods" class="footer-link">اتصل بنا</a></li>
-            <li><a href="#" class="footer-link">عن أكاديمية إعمل بيزنس</a></li>
-          </ul>
-        </div>
+          <!-- Card 3: شهادات معتمدة -->
+          <div class="choose-our-program-card" style="grid-area: certificate">
+            <img
+              src="./public/images/Ellipse 152.png"
+              alt="certificate"
+              class="choose-our-program-card-shape"
+            />
+            <div class="choose-our-program-card-content">
+              <img
+                src="./public/images/Group-2.png"
+                alt="certificate"
+                class="choose-our-program-card-image"
+              />
+              <h2 class="choose-our-program-card-title">شهادات معتمدة</h2>
+              <p class="choose-our-program-card-description">
+                اكثر من 25+ شهادة معتمدة
+              </p>
+            </div>
+          </div>
 
-        <!-- العمود الثالث: طرق الدفع -->
-        <div class="footer-column footer-payment">
-          <h3 class="footer-column-title">طرق الدفع</h3>
-          <div class="payment-methods">
-            <!-- الصف الأول -->
-            <div class="payment-row">
-              <div class="payment-item">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/be392643c8220ccd0ce1567e3ad7745c42e9ff3f?width=41" alt="المحفظة الذكية" class="payment-logo" />
-                <span class="payment-text">المحفظة الذكية</span>
-              </div>
-              <div class="payment-item">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Vodafone_logo_2017.svg/200px-Vodafone_logo_2017.svg.png" alt="فودافون" class="payment-logo" />
-                <span class="payment-text">Vodafone</span>
-              </div>
-            </div>
-            
-            <!-- الصف الثاني -->
-            <div class="payment-row">
-              <div class="payment-item">
-                <img src="https://tabby.ai/static/tabby-logo.svg" alt="تابي" class="payment-logo" />
-                <span class="payment-text">tabby</span>
-              </div>
-              <div class="payment-item">
-                <img src="https://tamara.co/static/logo-tamara.svg" alt="تمارا" class="payment-logo" />
-                <span class="payment-text">tamara</span>
-              </div>
-            </div>
-            
-            <!-- الصف الثالث -->
-            <div class="payment-row">
-              <div class="payment-item">
-                <img src="./public/images/mastercard-logo.png" alt="ماستركارد" class="payment-logo" />
-              </div>
-              <div class="payment-item">
-                <img src="./public/images/visa-logo.png" alt="فيزا" class="payment-logo" />
-              </div>
-              <div class="payment-item">
-                <img src="https://fawry.com/assets/images/logo.svg" alt="فوري" class="payment-logo" />
-                <span class="payment-text">Fawry</span>
-              </div>
+          <!-- Card 4: برامج مرنة تناسب حياتك -->
+          <div class="choose-our-program-card" style="grid-area: flexible">
+            <img
+              src="./public/images/Ellipse 151.png"
+              alt="flexible"
+              class="choose-our-program-card-shape"
+            />
+            <div class="choose-our-program-card-content">
+              <img
+                src="./public/images/time-management.png"
+                alt="flexible"
+                class="choose-our-program-card-image"
+              />
+              <h2 class="choose-our-program-card-title">
+                برامج مرنة تناسب حياتك.
+              </h2>
+              <p class="choose-our-program-card-description">
+                يمكنك ان توقف البرنامج و استكماله اي وقت
+              </p>
             </div>
           </div>
         </div>
-
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <script src="index.js"></script>
-</body>
+    <!-- Testimonials Section -->
+    <section id="success-stories" class="testimonials-section">
+      <div class="testimonials-subtitle">أكثر من +150 ألف عميل راضيين</div>
+      <h2 class="testimonials-title">
+        قصص
+        <p>نجاح</p>
+        طلابنا
+      </h2>
+      <div class="testimonials-container">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="star-rating">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p class="testimonial-text">
+            بصراحة، برنامج الماجستير كان أفضل قرار اتخذته! تعلمت مهارات جديدة
+            ساعدتني أتطور وأرتقى في وظيفتي. أكثر شي عجبني إنه البرنامج مرن، قدرت
+            أدرس واشتغل بنفس الوقت.
+          </p>
+          <div class="author-info">
+            <img
+              src="./public/images/Oval-2.png"
+              alt="محمد العتيبي"
+              class="author-image"
+            />
+            <div class="author-details">
+              <div class="author-name">محمد العتيبي</div>
+              <div class="author-title">مدير مشاريع</div>
+            </div>
+          </div>
+        </div>
 
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="star-rating">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p class="testimonial-text">
+            الماجستير كان تجربة رهيبة! المحتوى كان عملي وبسيط وساعدني أطور نفسي
+            في شغلي. بعد ما خلصت البرنامج، حصلت على وظيفة براتب أحسن، وصرت أشتغل
+            بثقة كبيرة.
+          </p>
+          <div class="author-info">
+            <img
+              src="./public/images/Oval-1.png"
+              alt="سارة القحطاني"
+              class="author-image"
+            />
+            <div class="author-details">
+              <div class="author-name">سارة القحطاني</div>
+              <div class="author-title">أخصائية تسويق رقمي</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="star-rating">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p class="testimonial-text">
+            البرنامج غير حياتي! تعلمت أشياء ما كنت أتخيل إنها تفيدني بهالشكل في
+            حياتي المهنية. بعد ما خلصت الماجستير، صرت مشرف في الشركة وأدير فريق
+            كامل.
+          </p>
+          <div class="author-info">
+            <img
+              src="./public/images/Oval.png"
+              alt="عبدالله الدوسري"
+              class="author-image"
+            />
+            <div class="author-details">
+              <div class="author-name">عبدالله الدوسري</div>
+              <div class="author-title">مشرف عمليات</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section id="payment-methods" class="payment-section">
+      <!-- shadow in bottom in large screen -->
+      <img
+        src="./public/images/OurStudentsStories_buttom_shap.svg"
+        alt="shadow"
+        class="bottom-shadow"
+      />
+
+      <!-- shadow in bottom in small screen -->
+      <img
+        src="./public/images/OurStudentsStories_buttom_shap.svg"
+        alt="shadow"
+        class="bottom-shadow-small"
+      />
+
+      <div class="content-container">
+        <div class="text-content">
+          <h2>الدفع بالطريقة المناسبة لك!</h2>
+          <p>
+            اعمل بيزنس بتوفرلك طرق دفع كتيرة حتى تختار ما يناسبك من اي طريقة و
+            تسهيل الدفع للتعليم الفوري و عدم التعقيد
+          </p>
+          <button class="cta-button">احجز مكانك معانا!</button>
+        </div>
+        <div class="cards-container">
+          <div class="card mastercard">
+            <div class="refund-badge">
+              Master
+              <br />
+              Card
+            </div>
+            <img src="./public/images/mastercard-logo.png" alt="Mastercard" />
+          </div>
+          <div class="card visa">
+            <div class="refund-badge">Visa</div>
+            <img src="./public/images/visa-logo.png" alt="Visa" />
+          </div>
+          <div class="card cash">
+            <div class="refund-badge">
+              دفع
+              <br />
+              كامل
+            </div>
+            <img src="./public/images/cash-icon.png" alt="Cash Payment" />
+          </div>
+          <div class="card coins">
+            <div class="refund-badge">
+              ١٠٠٪
+              <br />
+              استرجاع
+            </div>
+            <img src="./public/images/refund-icon.png" alt="Refund" />
+          </div>
+        </div>
+
+        <button class="cta-button-small">احجز مكانك معانا!</button>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="footer py-16 px-4 xl:px-0">
+      <div class="container px-[85px]">
+        <div class="grid grid-cols-1 xl:grid-cols-12 lg:grid-cols-1 gap-8">
+          <!-- Brand Column -->
+          <div class="xl:col-span-2 lg:col-span-12">
+            <div class="brand text-center lg:text-center xl:text-right">
+              <a href="">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/5413cecfffcb7dec26ccb69e0d41b01f3522adb8?width=300"
+                  alt="أكاديمية اعمل بيزنس"
+                  class="max-w-[170px] xl:max-w-[140px] lg:max-w-[120px] mx-auto lg:mx-auto xl:mx-0"
+                />
+              </a>
+            </div>
+          </div>
+
+          <!-- Description and Social Column -->
+          <div class="xl:col-span-3 lg:col-span-12">
+            <div class="text text-center lg:text-center xl:text-right">
+              <p
+                class="text-white text-sm leading-7 max-w-[500px] mx-auto lg:mx-auto xl:mx-0 mb-0"
+              >
+                أكاديمية إعمل بيزنس هي مؤسسة تعليمية رائدة تقدم تجربة تدريبية
+                متكاملة للمشتركين في أكثر من 80 دولة، مع شهادات معتمدة، للنجاح
+                في عالم ريادة الأعمال ودخول سوق العمل بقوة.
+              </p>
+            </div>
+
+            <div
+              class="social flex flex-wrap gap-2 mt-8 justify-center lg:justify-center xl:justify-start mb-8 lg:mb-8 xl:mb-0"
+            >
+              <a
+                target="_blank"
+                href="https://wa.me/966920026065"
+                class="hover:opacity-80 transition-opacity"
+              >
+                <img
+                  src="./public/images/whatsapp-icon.png"
+                  alt="WhatsApp Icon"
+                  class="w-9 h-6"
+                />
+              </a>
+
+              <a
+                target="_blank"
+                href="https://t.me/e3melbusiness"
+                class="hover:opacity-80 transition-opacity"
+              >
+                <img
+                  src="./public/images/telgram-icon.png"
+                  alt="Telegram Icon"
+                  class="w-9 h-6"
+                />
+              </a>
+
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/company/e3melbusinesscommunity/"
+                class="hover:opacity-80 transition-opacity"
+              >
+                <img
+                  src="./public/images/linkedin-icon.png"
+                  alt="LinkedIn Icon"
+                  class="w-9 h-6"
+                />
+              </a>
+
+              <a
+                target="_blank"
+                href="https://www.instagram.com/e3melbusinessacademy/"
+                class="hover:opacity-80 transition-opacity"
+              >
+                <img
+                  src="./public/images/instagram-icon.png"
+                  alt="Instagram Icon"
+                  class="w-9 h-6"
+                />
+              </a>
+
+              <a
+                target="_blank"
+                href="https://www.facebook.com/e3melbusiness"
+                class="hover:opacity-80 transition-opacity"
+              >
+                <img
+                  src="./public/images/facebook-icon.png"
+                  alt="Facebook Icon"
+                  class="w-9 h-6"
+                />
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links Column -->
+          <div class="xl:col-span-3 lg:col-span-6">
+            <h5 class="footer-title text-white font-semibold mb-6 text-lg">
+              روابط سريعة
+            </h5>
+            <div class="grid grid-cols-2 gap-3">
+
+              <div class="space-y-4">
+                <a
+                  class="footer-link block text-sm font-medium text-white hover:text-gray-300 transition-colors"
+                  href="instructors"
+                  >المحاضرين</a
+                >
+                <a
+                  class="footer-link block text-sm font-medium text-white hover:text-gray-300 transition-colors"
+                  href="testimonial"
+                  >آراء العملاء</a
+                >
+                <a
+                  class="footer-link block text-sm font-medium text-white hover:text-gray-300 transition-colors"
+                  href="terms"
+                  >الشروط و الأحكام</a
+                >
+                <a
+                  class="footer-link block text-sm font-medium text-white hover:text-gray-300 transition-colors"
+                  href="faq"
+                  >الأسئلة الشائعة</a
+                >
+              </div>
+              
+              <div class="space-y-4">
+                <a
+                  class="footer-link block text-sm font-medium text-white hover:text-gray-300 transition-colors"
+                  href="search-certificates"
+                  >الاستعلام عن الشهادات</a
+                >
+                <a
+                  class="footer-link block text-sm font-medium text-white hover:text-gray-300 transition-colors"
+                  href="حاملي الأسهم" 
+                >حاملي الأسهم </a>
+
+                <a
+                class="footer-link block text-sm font-medium text-white hover:text-gray-300 transition-colors"
+                href="contactus"
+                >إتصل بنا</a
+              >
+
+                <a
+                  class="footer-link block text-sm font-medium text-white hover:text-gray-300 transition-colors"
+                  href="عن أكاديمية اعمل بيزنس "
+                >عن أكاديمية اعمل بيزنس </a>
+               
+              </div>
+             
+            </div>
+          </div>
+
+          <!-- Payment Methods Column -->
+          <div class="xl:col-span-4 lg:col-span-6">
+            <h3 class="footer-title text-white font-semibold mb-6 text-lg">
+              طرق الدفع
+            </h3>
+            <div class="pay_methods space-y-4">
+              <!-- الصف الأول -->
+              <div class="flex gap-1 flex-wrap pay_methods-icons">
+                <span>
+                  <img
+                    class="max-w-[100px]"
+                    src="./public/images/alahly.png"
+                    alt="البنك الاهلى المصرى "
+                  />
+                </span>
+                <span>
+                  <img
+                    class="max-w-[100px]"
+                    src="./public/images/vodafone.png"
+                    alt="فودافون"
+                  />
+                </span>
+                <span>
+                  <img
+                    class="max-w-[100px]"
+                    src="./public/images/tabby.png"
+                    alt="تابي"
+                  />
+                </span>
+                <span>
+                  <img
+                    class="max-w-[100px]"
+                    src="./public/images/tamara.png"
+                    alt="تمارا"
+                  />
+                </span>
+              </div>
+              <!-- الصف الثاني -->
+              <div class="flex gap-4 flex-wrap">
+                <span>
+                  <img
+                    class="max-w-[100px]"
+                    src="./public/images/mastercard.png"
+                    alt="ماستركارد"
+                  />
+                </span>
+                <span>
+                  <img
+                    class="max-w-[100px]"
+                    src="./public/images/visa.png"
+                    alt="فيزا"
+                  />
+                </span>
+                <span>
+                  <img
+                    class="max-w-[100px]"
+                    src="./public/images/fawry.png"
+                    alt="فوري"
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
 </html>
