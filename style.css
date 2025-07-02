@@ -49,6 +49,12 @@ body {
   padding: 0 0 44px 0;
 }
 
+@media (max-width: 768px) {
+  .hero-section {
+    background: transparent;
+  }
+}
+
 /* Background Elements */
 .background-overlay {
   position: absolute;
@@ -643,6 +649,8 @@ body {
   .hero-content {
     padding: 0 40px;
     max-width: 1000px;
+    background: var(--background-dark);
+
   }
 }
 
