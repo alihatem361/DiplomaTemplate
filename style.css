@@ -257,6 +257,7 @@ body {
   color: var(--neutral-dark);
   margin-bottom: 3px;
   line-height: normal;
+  text-align: right ;
 }
 
 .form-title .highlight {
