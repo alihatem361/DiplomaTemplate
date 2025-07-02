@@ -1728,10 +1728,20 @@ body {
   gap: 10px;
   padding: 20px;
   margin: 10px;
-  width: 300px;
+  width: 250px;
   height: 200px;
 }
 
+
+@media (max-width: 768px) {
+  .choose-our-program-section
+    .choose-our-program-content
+    .choose-our-program-second-part
+    .choose-our-program-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
 .choose-our-program-section
   .choose-our-program-content
   .choose-our-program-second-part
