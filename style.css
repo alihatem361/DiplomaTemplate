@@ -698,7 +698,7 @@ body {
   }
 
   .registration-form {
-    padding: 40px 30px 60px;
+    padding: 40px 40px 60px;
     max-width: 500px;
     order: 2;
   }
@@ -799,7 +799,7 @@ body {
   }
 
   .registration-form {
-    padding: 40px 30px 60px;
+    padding: 40px 40px 60px !important;
     max-width: 500px;
     order: 2;
   }
@@ -1538,6 +1538,8 @@ body {
   
   .mba-card-title {
     font-size: 16px;
+    margin-bottom: 0px;
+    margin-top: 20px;
   }
   
   .mba-card-description {
