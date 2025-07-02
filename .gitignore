@@ -1,1 +1,7 @@
 .config/
+build/
+
+builder.config.json
+Design.json
+vercel.json
+
