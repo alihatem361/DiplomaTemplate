@@ -1506,6 +1506,7 @@ body {
   
   .mba-program-bg-small {
     display: block;
+    left: 0;
   }
   
   .mba-program-container {
