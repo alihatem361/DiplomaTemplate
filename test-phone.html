@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار حقل الهاتف الدولي</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        .phone-container {
+            display: flex;
+            gap: 10px;
+            align-items: stretch;
+            direction: ltr;
+        }
+        .country-selector {
+            flex: 0 0 200px;
+            position: relative;
+        }
+        .phone-input-wrapper {
+            flex: 1;
+        }
+        .iti {
+            width: 100%;
+            display: flex;
+        }
+        .iti__tel-input {
+            width: 100%;
+            height: 45px;
+            padding: 10px 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            direction: rtl;
+            text-align: right;
+        }
+        .iti__tel-input:focus {
+            border-color: #00b34f;
+            outline: none;
+        }
+        .iti__selected-flag {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-right: none;
+            height: 45px;
+            border-radius: 5px 0 0 5px;
+            min-width: 50px;
+        }
+        .iti__tel-input {
+            border-radius: 0 5px 5px 0;
+        }
+        .iti__country-list {
+            direction: rtl;
+        }
+        .test-button {
+            background: #00b34f;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .test-button:hover {
+            background: #029843;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #00b34f;
+        }
+        .valid {
+            border-color: #00b34f !important;
+            background-color: #f0f9ff;
+        }
+        .error {
+            border-color: #dc3545 !important;
+            background-color: #fef2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; color: #333; margin-bottom: 30px;">
+            اختبار حقل الهاتف الدولي
+        </h1>
+        
+        <div class="form-group">
+            <label for="phone">رقم الهاتف:</label>
+            <div class="phone-container">
+                <input id="phone" type="tel" placeholder="ادخل رقم الهاتف">
+            </div>
+        </div>
+        
+        <button class="test-button" onclick="validatePhone()">التحقق من الرقم</button>
+        <button class="test-button" onclick="getFullNumber()">الحصول على الرقم الكامل</button>
+        <button class="test-button" onclick="getCountryInfo()">معلومات الدولة</button>
+        <button class="test-button" onclick="testCountryChange()">اختبار تغيير الدولة</button>
+        
+        <div id="result" class="result" style="display: none;"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <script>
+        // Initialize intl-tel-input with enhanced features and Arabic names
+        const phoneInputField = document.querySelector("#phone");
+        
+        // Arabic country names mapping
+        const arabicCountryNames = {
+            "sa": "المملكة العربية السعودية",
+            "ae": "الإمارات العربية المتحدة",
+            "kw": "الكويت",
+            "qa": "قطر",
+            "bh": "البحرين",
+            "om": "عُمان",
+            "eg": "مصر",
+            "jo": "الأردن",
+            "lb": "لبنان",
+            "sy": "سوريا",
+            "iq": "العراق",
+            "ly": "ليبيا",
+            "ma": "المغرب",
+            "tn": "تونس",
+            "dz": "الجزائر",
+            "sd": "السودان",
+            "ye": "اليمن",
+            "ps": "فلسطين",
+            "us": "الولايات المتحدة الأمريكية",
+            "gb": "المملكة المتحدة",
+            "de": "ألمانيا",
+            "fr": "فرنسا",
+            "it": "إيطاليا",
+            "es": "إسبانيا",
+            "tr": "تركيا",
+            "ir": "إيران",
+            "pk": "باكستان",
+            "in": "الهند",
+            "cn": "الصين",
+            "jp": "اليابان",
+            "kr": "كوريا الجنوبية",
+            "au": "أستراليا",
+            "ca": "كندا",
+            "br": "البرازيل",
+            "mx": "المكسيك",
+            "ru": "روسيا",
+            "nl": "هولندا"
+        };
+
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            initialCountry: "sa",
+            allowDropdown: true,
+            preferredCountries: ["sa", "ae", "kw", "qa", "bh", "om", "eg", "jo", "lb", "sy"],
+            separateDialCode: true,
+            autoHideDialCode: false,
+            nationalMode: false, // Show full international format
+            formatOnDisplay: true,
+            placeholderNumberType: "MOBILE",
+            showSearchBox: true,
+            searchNotFound: "لم يتم العثور على دولة",
+            customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
+                return "ادخل رقم الهاتف";
+            },
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
+        });
+
+        // Function to update country names to Arabic
+        function updateCountryNamesToArabic() {
+            setTimeout(() => {
+                const countryItems = document.querySelectorAll('.iti__country');
+                countryItems.forEach(item => {
+                    const countryData = item.getAttribute('data-country-code');
+                    const countryNameElement = item.querySelector('.iti__country-name');
+                    
+                    if (countryData && countryNameElement && arabicCountryNames[countryData]) {
+                        countryNameElement.textContent = arabicCountryNames[countryData];
+                    }
+                });
+            }, 100);
+        }
+
+        // Enhanced search functionality
+        let searchTimeout;
+        function enhanceSearch() {
+            const searchInput = document.querySelector('.iti__search-input');
+            if (searchInput) {
+                searchInput.placeholder = "ابحث عن دولة أو رمز الاتصال...";
+                
+                searchInput.addEventListener('input', function(e) {
+                    clearTimeout(searchTimeout);
+                    const query = e.target.value.toLowerCase();
+                    
+                    searchTimeout = setTimeout(() => {
+                        const countryItems = document.querySelectorAll('.iti__country');
+                        let visibleCount = 0;
+                        
+                        countryItems.forEach(item => {
+                            const countryName = item.querySelector('.iti__country-name');
+                            const dialCode = item.querySelector('.iti__dial-code');
+                            
+                            if (countryName && dialCode) {
+                                const nameMatch = countryName.textContent.toLowerCase().includes(query);
+                                const codeMatch = dialCode.textContent.includes(query);
+                                
+                                if (nameMatch || codeMatch || query === '') {
+                                    item.style.display = 'flex';
+                                    visibleCount++;
+                                } else {
+                                    item.style.display = 'none';
+                                }
+                            }
+                        });
+                        
+                        // Show "no results" message if no countries match
+                        if (visibleCount === 0 && query !== '') {
+                            console.log('No countries found for:', query);
+                        }
+                    }, 150);
+                });
+            }
+        }
+
+        // Country selection handler
+        phoneInputField.addEventListener("countrychange", function() {
+            const selectedCountry = phoneInput.getSelectedCountryData();
+            console.log("Country changed to:", selectedCountry);
+            
+            // Update input with country code at the start
+            if (selectedCountry && selectedCountry.dialCode) {
+                const currentValue = phoneInputField.value;
+                const dialCode = '+' + selectedCountry.dialCode;
+                
+                // Remove any existing dial code from the input
+                let cleanValue = currentValue.replace(/^\+\d+\s*/, '');
+                
+                // Add the new dial code at the start
+                phoneInputField.value = dialCode + ' ' + cleanValue;
+                
+                // Update the result display
+                updateCountryDisplay();
+            }
+        });
+
+        // Handle dropdown opening to enhance search and update Arabic names
+        phoneInputField.addEventListener("open:countrydropdown", function() {
+            updateCountryNamesToArabic();
+            setTimeout(enhanceSearch, 100);
+        });
+
+        // Initialize Arabic names on load
+        updateCountryNamesToArabic();
+
+        function updateCountryDisplay() {
+            const selectedCountry = phoneInput.getSelectedCountryData();
+            const result = document.getElementById("result");
+            
+            if (selectedCountry) {
+                result.style.display = "block";
+                result.innerHTML = `
+                    <h3>الدولة المختارة:</h3>
+                    <p><strong>الدولة:</strong> ${selectedCountry.name}</p>
+                    <p><strong>رمز الاتصال:</strong> +${selectedCountry.dialCode}</p>
+                    <p><strong>كود الدولة:</strong> ${selectedCountry.iso2.toUpperCase()}</p>
+                    <p><strong>القيمة في الحقل:</strong> ${phoneInputField.value}</p>
+                `;
+            }
+        }
+
+        // Add validation on blur
+        phoneInputField.addEventListener("blur", function() {
+            if (phoneInput.isValidNumber()) {
+                phoneInputField.classList.remove("error");
+                phoneInputField.classList.add("valid");
+            } else {
+                if (phoneInputField.value.trim() !== "") {
+                    phoneInputField.classList.remove("valid");
+                    phoneInputField.classList.add("error");
+                }
+            }
+        });
+
+        // Reset validation styling when user starts typing
+        phoneInputField.addEventListener("input", function() {
+            phoneInputField.classList.remove("error", "valid");
+        });
+
+        // Test functions
+        function validatePhone() {
+            const result = document.getElementById("result");
+            const isValid = phoneInput.isValidNumber();
+            
+            result.style.display = "block";
+            result.innerHTML = `
+                <h3>نتيجة التحقق:</h3>
+                <p><strong>صحيح:</strong> ${isValid ? "نعم ✅" : "لا ❌"}</p>
+                <p><strong>الرقم المدخل:</strong> ${phoneInputField.value}</p>
+            `;
+            
+            if (isValid) {
+                phoneInputField.classList.add("valid");
+                phoneInputField.classList.remove("error");
+            } else {
+                phoneInputField.classList.add("error");
+                phoneInputField.classList.remove("valid");
+            }
+        }
+
+        function getFullNumber() {
+            const result = document.getElementById("result");
+            const fullNumber = phoneInput.getNumber();
+            const nationalNumber = phoneInput.getNumber(intlTelInputUtils.numberFormat.NATIONAL);
+            const internationalNumber = phoneInput.getNumber(intlTelInputUtils.numberFormat.INTERNATIONAL);
+            
+            result.style.display = "block";
+            result.innerHTML = `
+                <h3>تنسيقات الرقم:</h3>
+                <p><strong>الرقم الكامل:</strong> ${fullNumber}</p>
+                <p><strong>الرقم المحلي:</strong> ${nationalNumber}</p>
+                <p><strong>الرقم الدولي:</strong> ${internationalNumber}</p>
+            `;
+        }
+
+        function getCountryInfo() {
+            const result = document.getElementById("result");
+            const countryData = phoneInput.getSelectedCountryData();
+            
+            result.style.display = "block";
+            result.innerHTML = `
+                <h3>معلومات الدولة:</h3>
+                <p><strong>اسم الدولة:</strong> ${countryData.name}</p>
+                <p><strong>كود الدولة:</strong> ${countryData.iso2.toUpperCase()}</p>
+                <p><strong>رمز الاتصال:</strong> +${countryData.dialCode}</p>
+            `;
+        }
+
+        function testCountryChange() {
+            // Test changing to different countries
+            const testCountries = ['eg', 'ae', 'us', 'gb', 'de'];
+            const randomCountry = testCountries[Math.floor(Math.random() * testCountries.length)];
+            
+            phoneInput.setCountry(randomCountry);
+            
+            const result = document.getElementById("result");
+            result.style.display = "block";
+            result.innerHTML = `
+                <h3>تم تغيير الدولة عشوائياً:</h3>
+                <p><strong>الدولة الجديدة:</strong> ${phoneInput.getSelectedCountryData().name}</p>
+                <p><strong>رمز الاتصال:</strong> +${phoneInput.getSelectedCountryData().dialCode}</p>
+                <p><strong>لاحظ كيف تم تحديث الحقل تلقائياً</strong></p>
+            `;
+        }
+
+        // Sample phone numbers for testing
+        console.log("أرقام للاختبار:");
+        console.log("السعودية: 0501234567");
+        console.log("الإمارات: 0501234567");
+        console.log("مصر: 01012345678");
+        console.log("الأردن: 0791234567");
+        
+        console.log("\nتجربة البحث:");
+        console.log("جرب البحث بـ: 'مصر', 'السعودية', '+20', '+966'");
+        console.log("يمكنك البحث بأسماء الدول أو رموز الاتصال");
+    </script>
+</body>
+</html>

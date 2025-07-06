@@ -128,6 +128,301 @@ document.addEventListener("DOMContentLoaded", function () {
     `Found ${ctaButtonsFound} additional CTA buttons by text content`
   );
   console.log("CTA button functionality initialized successfully!");
+
+  // Initialize International Telephone Input
+  const phoneInputField = document.querySelector("#phone");
+  if (phoneInputField) {
+    // Arabic country names mapping
+    const arabicCountryNames = {
+      sa: "المملكة العربية السعودية",
+      ae: "الإمارات العربية المتحدة",
+      kw: "الكويت",
+      qa: "قطر",
+      bh: "البحرين",
+      om: "عُمان",
+      eg: "مصر",
+      jo: "الأردن",
+      lb: "لبنان",
+      sy: "سوريا",
+      iq: "العراق",
+      ly: "ليبيا",
+      ma: "المغرب",
+      tn: "تونس",
+      dz: "الجزائر",
+      sd: "السودان",
+      ye: "اليمن",
+      ps: "فلسطين",
+      us: "الولايات المتحدة الأمريكية",
+      gb: "المملكة المتحدة",
+      de: "ألمانيا",
+      fr: "فرنسا",
+      it: "إيطاليا",
+      es: "إسبانيا",
+      tr: "تركيا",
+      ir: "إيران",
+      pk: "باكستان",
+      in: "الهند",
+      cn: "الصين",
+      jp: "اليابان",
+      kr: "كوريا الجنوبية",
+      au: "أستراليا",
+      ca: "كندا",
+      br: "البرازيل",
+      mx: "المكسيك",
+      ru: "روسيا",
+      nl: "هولندا",
+      be: "بلجيكا",
+      ch: "سويسرا",
+      se: "السويد",
+      no: "النرويج",
+      dk: "الدنمارك",
+      fi: "فنلندا",
+      at: "النمسا",
+      pl: "بولندا",
+      cz: "التشيك",
+      hu: "المجر",
+      gr: "اليونان",
+      pt: "البرتغال",
+      ie: "أيرلندا",
+      za: "جنوب أفريقيا",
+      ng: "نيجيريا",
+      ke: "كينيا",
+      et: "إثيوبيا",
+      gh: "غانا",
+      tz: "تنزانيا",
+      ug: "أوغندا",
+      zw: "زيمبابوي",
+      mz: "موزمبيق",
+      ao: "أنغولا",
+      mg: "مدغشقر",
+      ci: "ساحل العاج",
+      cm: "الكاميرون",
+      ml: "مالي",
+      bf: "بوركينا فاسو",
+      ne: "النيجر",
+      sn: "السنغال",
+      td: "تشاد",
+      cf: "جمهورية أفريقيا الوسطى",
+      cg: "جمهورية الكونغو",
+      cd: "جمهورية الكونغو الديمقراطية",
+      ga: "الغابون",
+      gq: "غينيا الاستوائية",
+      st: "ساو تومي وبرينسيبي",
+      cv: "الرأس الأخضر",
+      gw: "غينيا بيساو",
+      gn: "غينيا",
+      sl: "سيراليون",
+      lr: "ليبيريا",
+      mr: "موريتانيا",
+      mw: "مالاوي",
+      zm: "زامبيا",
+      bw: "بوتسوانا",
+      na: "ناميبيا",
+      sz: "إسواتيني",
+      ls: "ليسوتو",
+      mu: "موريشيوس",
+      sc: "سيشل",
+      km: "جزر القمر",
+      dj: "جيبوتي",
+      so: "الصومال",
+      er: "إريتريا",
+      rw: "رواندا",
+      bi: "بوروندي",
+      vu: "فانواتو",
+      fj: "فيجي",
+      pg: "بابوا غينيا الجديدة",
+      sb: "جزر سولومون",
+      nc: "كاليدونيا الجديدة",
+      pf: "بولينيزيا الفرنسية",
+      ck: "جزر كوك",
+      ws: "ساموا",
+      to: "تونغا",
+      tv: "توفالو",
+      nr: "ناورو",
+      ki: "كيريباتي",
+      fm: "ولايات ميكرونيزيا المتحدة",
+      pw: "بالاو",
+      mh: "جزر مارشال",
+    };
+
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      // Set the initial country to Saudi Arabia
+      initialCountry: "sa",
+
+      // Allow dropdown with all countries
+      allowDropdown: true,
+
+      // Show preferred countries at the top
+      preferredCountries: [
+        "sa",
+        "ae",
+        "kw",
+        "qa",
+        "bh",
+        "om",
+        "eg",
+        "jo",
+        "lb",
+        "sy",
+      ],
+
+      // Separate dial code to show it separately
+      separateDialCode: true,
+
+      // Auto hide country dial code
+      autoHideDialCode: false,
+
+      // National mode for number formatting
+      nationalMode: false, // Changed to false to show full international format
+
+      // Format on display
+      formatOnDisplay: true,
+
+      // Placeholder number type
+      placeholderNumberType: "MOBILE",
+
+      // Custom placeholder
+      customPlaceholder: function (
+        selectedCountryPlaceholder,
+        selectedCountryData
+      ) {
+        return "ادخل رقم الهاتف";
+      },
+
+      // Enable search box with custom options
+      showSearchBox: true,
+      searchNotFound: "لم يتم العثور على دولة",
+
+      // Custom dropdown container
+      dropdownContainer: document.body,
+
+      // Utils script for formatting/validation
+      utilsScript:
+        "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+    });
+
+    // Function to update country names to Arabic
+    function updateCountryNamesToArabic() {
+      setTimeout(() => {
+        const countryItems = document.querySelectorAll(".iti__country");
+        countryItems.forEach((item) => {
+          const countryData = item.getAttribute("data-country-code");
+          const countryNameElement = item.querySelector(".iti__country-name");
+
+          if (
+            countryData &&
+            countryNameElement &&
+            arabicCountryNames[countryData]
+          ) {
+            countryNameElement.textContent = arabicCountryNames[countryData];
+          }
+        });
+      }, 100);
+    }
+
+    // Enhanced search functionality
+    let searchTimeout;
+    function enhanceSearch() {
+      const searchInput = document.querySelector(".iti__search-input");
+      if (searchInput) {
+        // Set placeholder in Arabic
+        searchInput.placeholder = "ابحث عن دولة...";
+
+        // Add custom search behavior
+        searchInput.addEventListener("input", function (e) {
+          clearTimeout(searchTimeout);
+          const query = e.target.value.toLowerCase();
+
+          searchTimeout = setTimeout(() => {
+            const countryItems = document.querySelectorAll(".iti__country");
+            countryItems.forEach((item) => {
+              const countryName = item.querySelector(".iti__country-name");
+              const dialCode = item.querySelector(".iti__dial-code");
+
+              if (countryName && dialCode) {
+                const nameMatch = countryName.textContent
+                  .toLowerCase()
+                  .includes(query);
+                const codeMatch = dialCode.textContent.includes(query);
+
+                if (nameMatch || codeMatch || query === "") {
+                  item.style.display = "flex";
+                } else {
+                  item.style.display = "none";
+                }
+              }
+            });
+          }, 150);
+        });
+      }
+    }
+
+    // Country selection handler
+    phoneInputField.addEventListener("countrychange", function () {
+      const selectedCountry = phoneInput.getSelectedCountryData();
+      console.log("Country changed to:", selectedCountry);
+
+      // Update input with country code at the start
+      if (selectedCountry && selectedCountry.dialCode) {
+        const currentValue = phoneInputField.value;
+        const dialCode = "+" + selectedCountry.dialCode;
+
+        // Remove any existing dial code from the input
+        let cleanValue = currentValue.replace(/^\+\d+\s*/, "");
+
+        // Add the new dial code at the start
+        phoneInputField.value = dialCode + " " + cleanValue;
+
+        // Trigger input event to format the number
+        phoneInputField.dispatchEvent(new Event("input"));
+      }
+    });
+
+    // Handle dropdown opening to enhance search
+    phoneInputField.addEventListener("open:countrydropdown", function () {
+      updateCountryNamesToArabic();
+      setTimeout(enhanceSearch, 100);
+    });
+
+    // Initialize Arabic names on first load
+    updateCountryNamesToArabic();
+
+    // Add validation on blur
+    phoneInputField.addEventListener("blur", function () {
+      if (phoneInput.isValidNumber()) {
+        phoneInputField.classList.remove("error");
+        phoneInputField.classList.add("valid");
+      } else {
+        if (phoneInputField.value.trim() !== "") {
+          phoneInputField.classList.remove("valid");
+          phoneInputField.classList.add("error");
+        }
+      }
+    });
+
+    // Reset validation styling when user starts typing
+    phoneInputField.addEventListener("blur", function () {
+      if (phoneInput.isValidNumber()) {
+        phoneInputField.classList.remove("error");
+        phoneInputField.classList.add("valid");
+      } else {
+        if (phoneInputField.value.trim() !== "") {
+          phoneInputField.classList.remove("valid");
+          phoneInputField.classList.add("error");
+        }
+      }
+    });
+
+    // Reset validation styling when user starts typing
+    phoneInputField.addEventListener("input", function () {
+      phoneInputField.classList.remove("error", "valid");
+    });
+
+    // Store the intl-tel-input instance globally for form submission
+    window.phoneInputInstance = phoneInput;
+
+    console.log("International phone input initialized successfully!");
+  }
 });
 
 // Smooth scroll for desktop navigation links
@@ -356,3 +651,107 @@ window.FAQController = {
     });
   },
 };
+
+// Form submission handler with international phone validation
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".form");
+  const submitButton = document.querySelector(".submit-button");
+
+  if (form && submitButton) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Get form data
+      const nameInput = form.querySelector('input[type="text"]');
+      const emailInput = form.querySelector('input[type="email"]');
+      const phoneInput = document.querySelector("#phone");
+
+      let isValid = true;
+      let errors = [];
+
+      // Validate name
+      if (!nameInput.value.trim()) {
+        errors.push("يرجى إدخال الاسم");
+        nameInput.classList.add("error");
+        isValid = false;
+      } else {
+        nameInput.classList.remove("error");
+      }
+
+      // Validate email
+      if (!emailInput.value.trim()) {
+        errors.push("يرجى إدخال البريد الإلكتروني");
+        emailInput.classList.add("error");
+        isValid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+        errors.push("يرجى إدخال بريد إلكتروني صحيح");
+        emailInput.classList.add("error");
+        isValid = false;
+      } else {
+        emailInput.classList.remove("error");
+      }
+
+      // Validate phone using intl-tel-input
+      if (window.phoneInputInstance) {
+        if (!phoneInput.value.trim()) {
+          errors.push("يرجى إدخال رقم الهاتف");
+          phoneInput.classList.add("error");
+          isValid = false;
+        } else if (!window.phoneInputInstance.isValidNumber()) {
+          errors.push("يرجى إدخال رقم هاتف صحيح");
+          phoneInput.classList.add("error");
+          isValid = false;
+        } else {
+          phoneInput.classList.remove("error");
+        }
+      }
+
+      if (isValid) {
+        // Get the full international number
+        const fullPhoneNumber = window.phoneInputInstance
+          ? window.phoneInputInstance.getNumber()
+          : phoneInput.value;
+
+        // Prepare form data
+        const formData = {
+          name: nameInput.value.trim(),
+          email: emailInput.value.trim(),
+          phone: fullPhoneNumber,
+          country: window.phoneInputInstance
+            ? window.phoneInputInstance.getSelectedCountryData().name
+            : "",
+          countryCode: window.phoneInputInstance
+            ? window.phoneInputInstance.getSelectedCountryData().iso2
+            : "",
+        };
+
+        console.log("Form submitted with data:", formData);
+
+        // Show success message
+        submitButton.textContent = "تم التسجيل بنجاح!";
+        submitButton.style.background = "var(--brand-primary)";
+        submitButton.disabled = true;
+
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          form.reset();
+          submitButton.textContent = "سجّل الآن وابدأ رحلتك!";
+          submitButton.style.background = "var(--brand-secondary)";
+          submitButton.disabled = false;
+
+          // Clear validation classes
+          [nameInput, emailInput, phoneInput].forEach((input) => {
+            input.classList.remove("error", "valid");
+          });
+        }, 3000);
+
+        // Here you would typically send the data to your server
+        // Example: sendToServer(formData);
+      } else {
+        // Show error message
+        console.log("Form validation errors:", errors);
+        alert(errors.join("\n"));
+      }
+    });
+  }
+});

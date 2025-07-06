@@ -13,6 +13,9 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- International Telephone Input CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -150,36 +153,12 @@
                   />
                 </svg>
               </label>
-              <div class="phone-input">
-                <input
-                type="tel"
-                class="phone-field"
-                placeholder="+05 (555) 000-0000"
-                />
-                
-                <div class="phone-dropdown">
-                  <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/be392643c8220ccd0ce1567e3ad7745c42e9ff3f?width=41"
-                  alt="SA Flag"
-                  class="country-flag"
-                  />
-                  <svg
-                    class="dropdown-icon"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 22 22"
-                    fill="none"
-                  >
-                    <path
-                      d="M5.71765 8.57227L10.8612 13.7158L16.0047 8.57227"
-                      stroke="#667085"
-                      stroke-width="1.41763"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
+              <input 
+                id="phone" 
+                type="tel" 
+                class="field-input" 
+                name="phone" 
+              />
             </div>
 
             <div class="form-field">
@@ -1568,6 +1547,8 @@
       </div>
     </footer>
 
+    <!-- International Telephone Input JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
