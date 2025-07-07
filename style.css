@@ -1034,6 +1034,28 @@ body {
   margin-left: 0;
 }
 
+.submit-button {
+  width: 100%;
+  max-width: 414px;
+  height: 50px;
+  padding: 5px 12px;
+  margin: 0 auto;
+  background: var(--brand-secondary);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-family: "Alexandria", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background: var(--brand-primary);
+  transform: translateY(-1px);
+}
+
 /* Focus states for accessibility */
 .field-input:focus,
 .phone-field:focus,
