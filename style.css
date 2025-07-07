@@ -386,6 +386,7 @@ body {
 .iti {
   width: 100%;
   direction: ltr;
+  display: flex;
   /* Force LTR for proper flag positioning */
 }
 
@@ -407,413 +408,44 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
+  min-width: 50px; /* Ensures flag has enough space */
 }
 
-.iti__selected-flag:hover {
-  background: #f9fafb;
-}
-
-.iti__arrow {
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 4px solid var(--gray-500);
-  margin-left: 6px;
-}
-
-.iti__arrow--up {
-  border-top: none;
-  border-bottom: 4px solid var(--gray-500);
-}
-
+/* Fix flag display */
 .iti__flag {
-  width: 24px;
-  height: 18px;
-  border-radius: 2px;
-  background-size: contain;
+  display: inline-block;
 }
 
-.iti__dial-code {
-  color: var(--gray-500);
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  margin-left: 4px;
-}
-
+/* Fix the dropdown positioning */
 .iti__country-list {
-  background: white;
-  border: 1px solid var(--gray-300);
-  border-radius: 6px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: absolute;
+  z-index: 999;
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  margin: 0 0 0 -1px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border: 1px solid #ccc;
+  white-space: nowrap;
   max-height: 200px;
   overflow-y: auto;
-  z-index: 1000;
-  direction: rtl;
-  /* RTL for country list */
-}
-
-.iti__country {
-  padding: 8px 12px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  direction: rtl;
-}
-
-.iti__country:hover {
-  background: var(--brand-light-hover);
-}
-
-.iti__country.iti__highlight {
-  background: var(--brand-light-hover);
-}
-
-.iti__country-name {
-  flex: 1;
-  font-family: "Alexandria", sans-serif;
-  font-size: 14px;
-  color: var(--neutral-dark);
-  text-align: right;
-  margin-right: 8px;
-}
-
-.iti__dial-code {
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  color: var(--gray-500);
-}
-
-.iti__search-input {
-  width: calc(100% - 24px);
-  margin: 12px;
-  padding: 8px 12px;
-  border: 1px solid var(--gray-300);
   border-radius: 4px;
-  font-family: "Alexandria", sans-serif;
-  font-size: 14px;
-  direction: rtl;
-  text-align: right;
-  transition: border-color 0.2s ease;
 }
 
-.iti__search-input:focus {
-  border-color: var(--brand-primary);
-  outline: none;
-  box-shadow: 0 0 0 1px var(--brand-primary);
-}
-
-.iti__search-input::placeholder {
-  color: var(--gray-500);
-  font-style: italic;
-}
-
-/* Enhanced country list item styling */
+/* Properly style country items */
 .iti__country {
-  padding: 10px 12px;
+  padding: 5px 10px;
   display: flex;
   align-items: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  direction: rtl;
-  border-bottom: 1px solid #f3f4f6;
 }
 
-.iti__country:hover {
-  background: var(--brand-light-hover);
-  transform: translateX(-2px);
-}
-
-.iti__country.iti__highlight {
-  background: var(--brand-light-hover);
-  border-left: 3px solid var(--brand-primary);
-}
-
-.iti__country:last-child {
-  border-bottom: none;
-}
-
-/* Country name and dial code styling */
-.iti__country-name {
-  flex: 1;
-  font-family: "Alexandria", sans-serif;
-  font-size: 14px;
-  color: var(--neutral-dark);
-  text-align: right;
-  margin-right: 8px;
-  font-weight: 500;
-}
-
-.iti__dial-code {
-  font-family: "Inter", sans-serif;
-  font-size: 13px;
-  color: var(--brand-primary);
-  font-weight: 600;
-  background: #f0f9ff;
-  padding: 2px 6px;
-  border-radius: 3px;
-  margin-left: 8px;
-}
-
-/* Flag styling - Fixed for proper display */
-.iti__flag {
-  width: 24px;
-  height: 18px;
-  border-radius: 2px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  flex-shrink: 0;
-}
-
-/* Ensure flags are visible in dropdown */
-.iti__country .iti__flag {
-  margin-left: 8px;
-  order: 3;
-  /* Show flag last in RTL */
-}
-
-/* Selected flag styling */
-.iti__selected-flag .iti__flag {
-  margin-right: 6px;
-  margin-left: 0;
-}
-
-/* Fix for flag images - ensure CDN is loaded properly */
-.iti__flag-box {
-  width: 24px;
-  height: 18px;
-  display: inline-block;
-}
-
-/* Fallback for missing flag images */
-.iti__flag {
-  background-image: url('https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/img/flags.png');
-  background-repeat: no-repeat;
-}
-
-/* High DPI displays support */
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
-  .iti__flag {
-    background-image: url('https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/img/flags@2x.png');
-    background-size: 5652px 15px;
-  }
-}
-
-/* Search not found message */
-.iti__country:empty::after {
-  content: "لم يتم العثور على نتائج";
-  color: var(--gray-500);
-  font-style: italic;
-  text-align: center;
-  width: 100%;
-  display: block;
-  padding: 20px;
-}
-
-/* Enhanced dropdown container */
-.iti__country-list {
-  background: white;
-  border: 1px solid var(--gray-300);
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  max-height: 250px;
-  overflow-y: auto;
-  z-index: 1000;
-  direction: rtl;
-  min-width: 280px;
-}
-
-/* Scrollbar styling for dropdown */
-.iti__country-list::-webkit-scrollbar {
-  width: 6px;
-}
-
-.iti__country-list::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 3px;
-}
-
-.iti__country-list::-webkit-scrollbar-thumb {
-  background: var(--gray-300);
-  border-radius: 3px;
-}
-
-.iti__country-list::-webkit-scrollbar-thumb:hover {
-  background: var(--gray-500);
-}
-
-/* Custom search placeholder */
-.iti__search-input::-webkit-input-placeholder {
-  content: "البحث عن دولة...";
-}
-
-.iti__search-input::-moz-placeholder {
-  content: "البحث عن دولة...";
-}
-
-.iti__search-input:-ms-input-placeholder {
-  content: "البحث عن دولة...";
-}
-
-/* Input field styling for intl-tel-input */
-#phone.iti__tel-input {
-  width: 100%;
-  height: 42px;
-  padding: 10px 12px;
-  border: 1px solid var(--gray-300);
-  border-radius: 0 6px 6px 0;
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  color: var(--neutral-dark);
-  text-align: right;
-  direction: rtl;
-  background: white;
-  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-  transition: all 0.2s ease;
-}
-
-#phone.iti__tel-input:focus {
-  outline: none;
-  border-color: var(--brand-primary);
-  box-shadow: 0 0 0 2px rgba(0, 179, 79, 0.1);
-}
-
-#phone.iti__tel-input::placeholder {
-  color: var(--gray-500);
-  direction: rtl;
-  text-align: right;
-}
-
-/* Enhanced selected flag styling */
-.iti__selected-flag {
-  background: white;
-  border: 1px solid var(--gray-300);
-  border-right: none;
-  padding: 8px 12px;
-  border-radius: 6px 0px 0px 6px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.iti__selected-flag:hover {
-  background: #f9fafb;
-  border-color: var(--brand-primary);
-}
-
-.iti__selected-flag:focus {
-  outline: none;
-  border-color: var(--brand-primary);
-  box-shadow: 0 0 0 2px rgba(0, 179, 79, 0.1);
-}
-
-/* Dial code in selected flag */
-.iti__selected-flag .iti__dial-code {
-  color: var(--brand-primary);
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  margin-left: 4px;
-}
-
-/* Arrow styling */
-.iti__arrow {
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 4px solid var(--gray-500);
-  margin-left: 6px;
-  transition: transform 0.2s ease;
-}
-
-.iti__arrow--up {
-  border-top: none;
-  border-bottom: 4px solid var(--gray-500);
-  transform: rotate(180deg);
-}
-
-/* Validation states */
-#phone.valid {
-  border-color: var(--brand-primary);
-  background-color: #f0f9ff;
-}
-
-#phone.error {
-  border-color: var(--required-red);
-  background-color: #fef2f2;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .iti__country-list {
-    max-height: 150px;
-  }
-
-  .iti__search-input {
-    font-size: 16px;
-    /* Prevent zoom on iOS */
-  }
-
-  #phone.iti__tel-input {
-    font-size: 16px;
-    /* Prevent zoom on iOS */
-  }
-}
-
-/* Additional RTL fixes for intl-tel-input */
-.iti.iti--allow-dropdown {
+/* Style the phone input field */
+#phone {
   direction: ltr;
-  display: flex;
-  justify-content: space-between;
+  text-align: left;
+  padding-left: 85px; /* Make space for the country code */
 }
-
-.iti.iti--allow-dropdown input {
-  direction: rtl;
-  text-align: right;
-}
-
-.iti__selected-flag {
-  right: 0;
-  left: auto;
-}
-
-.iti__arrow {
-  margin-right: 6px;
-  margin-left: 0;
-}
-
-.iti__country-list {
-  left: -128px;
-  /* right: 0; */
-}
-
-.submit-button {
-  width: 100%;
-  max-width: 414px;
-  height: 50px;
-  padding: 5px 12px;
-  margin: 0 auto;
-  background: var(--brand-secondary);
-  border: none;
-  border-radius: 6px;
-  color: white;
-  font-family: "Alexandria", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.submit-button:hover {
-  background: var(--brand-primary);
-  transform: translateY(-1px);
-}
-
 /* Hero Main Content */
 .hero-main {
   display: flex;
@@ -1386,6 +1018,8 @@ body {
 .iti__flag {
   background-image: url('https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/img/flags.png');
   background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center;
 }
 
 /* High DPI displays support */
@@ -1393,7 +1027,6 @@ body {
 (min-resolution: 192dpi) {
   .iti__flag {
     background-image: url('https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/img/flags@2x.png');
-    background-size: 5652px 15px;
   }
 }
 
@@ -2872,10 +2505,6 @@ body {
   flex-wrap: wrap;
 }
 
-.footer .pay_methods span img {
-  max-width: 100px;
-}
-
 /* FAQ Section */
 .faq-section {
   display: flex;
@@ -3132,3 +2761,57 @@ body {
     z-index: -12;
 
   }
+
+  .phone-container {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  direction: ltr;
+  width: 100%;
+}
+
+/* Fix display of the flags by ensuring the .iti__flag class is displayed properly */
+.iti__flag {
+  background-image: url("https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/img/flags.png");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {
+    background-image: url("https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/img/flags@2x.png");
+  }
+}
+
+/* Fix search box display */
+.iti__search-container {
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+.iti__search-input {
+  font-size: 14px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 8px;
+}
+
+/* Fix country display */
+.iti__country-list {
+  width: 300px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Make sure the dropdown is visible */
+.iti__country-list.iti__hide {
+  display: none;
+}
+
+/* Fix RTL display for the country list */
+.iti__country-name {
+  margin-right: 6px;
+  text-align: right;
+}

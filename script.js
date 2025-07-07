@@ -1,5 +1,6 @@
-// Mobile Menu Functionality
+// Initialize international telephone input
 document.addEventListener("DOMContentLoaded", function () {
+  // Mobile Menu Functionality
   const mobileMenuButton = document.querySelector(".mobile-menu-button");
   const navContainer = document.querySelector(".nav-container");
 
@@ -130,9 +131,14 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("CTA button functionality initialized successfully!");
 
   // Initialize International Telephone Input
+  initPhoneInput();
+}); // End of DOMContentLoaded event listener
+
+// Function to initialize the international telephone input
+function initPhoneInput() {
   const phoneInputField = document.querySelector("#phone");
   if (phoneInputField) {
-    // Arabic country names mapping
+    // Arabic country names mapping - comprehensive list for better display
     const arabicCountryNames = {
       sa: "المملكة العربية السعودية",
       ae: "الإمارات العربية المتحدة",
@@ -273,13 +279,17 @@ document.addEventListener("DOMContentLoaded", function () {
       autoHideDialCode: false,
 
       // National mode for number formatting
-      nationalMode: false, // Changed to false to show full international format
+      nationalMode: false, // Show full international format
 
       // Format on display
       formatOnDisplay: true,
 
       // Placeholder number type
       placeholderNumberType: "MOBILE",
+
+      // Show search box
+      showSearchBox: true,
+      searchNotFound: "لم يتم العثور على دولة",
 
       // Custom placeholder
       customPlaceholder: function (
@@ -288,13 +298,6 @@ document.addEventListener("DOMContentLoaded", function () {
       ) {
         return "ادخل رقم الهاتف";
       },
-
-      // Enable search box with custom options
-      showSearchBox: true,
-      searchNotFound: "لم يتم العثور على دولة",
-
-      // Custom dropdown container
-      dropdownContainer: document.body,
 
       // Utils script for formatting/validation
       utilsScript:
@@ -326,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const searchInput = document.querySelector(".iti__search-input");
       if (searchInput) {
         // Set placeholder in Arabic
-        searchInput.placeholder = "ابحث عن دولة...";
+        searchInput.placeholder = "ابحث عن دولة أو رمز الاتصال...";
 
         // Add custom search behavior
         searchInput.addEventListener("input", function (e) {
@@ -335,6 +338,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
           searchTimeout = setTimeout(() => {
             const countryItems = document.querySelectorAll(".iti__country");
+            let visibleCount = 0;
+
             countryItems.forEach((item) => {
               const countryName = item.querySelector(".iti__country-name");
               const dialCode = item.querySelector(".iti__dial-code");
@@ -347,11 +352,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (nameMatch || codeMatch || query === "") {
                   item.style.display = "flex";
+                  visibleCount++;
                 } else {
                   item.style.display = "none";
                 }
               }
             });
+
+            // Show "no results" message if no countries match
+            if (visibleCount === 0 && query !== "") {
+              console.log("No countries found for:", query);
+            }
           }, 150);
         });
       }
@@ -423,7 +434,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log("International phone input initialized successfully!");
   }
-});
+} // End of initPhoneInput function
 
 // Smooth scroll for desktop navigation links
 document.addEventListener("DOMContentLoaded", function () {
