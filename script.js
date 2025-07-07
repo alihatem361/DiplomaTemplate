@@ -404,12 +404,19 @@ function initPhoneInput() {
             // Format the index with leading zeros (e.g., 0001, 0002, etc.)
             const formattedIndex = String(index + 1).padStart(4, "0");
 
-            // Check if we have Arabic translation, otherwise use the original name
+            // Get the original text and check if it's already been formatted
             const originalText = countryNameElement.textContent;
-            const arabicName = arabicCountryNames[countryData];
 
-            // Use Arabic name if available, otherwise keep original
-            const displayName = arabicName || originalText;
+            // If already formatted (contains number pattern), extract the original name
+            let displayText = originalText;
+            if (originalText.match(/^\d{4} - /)) {
+              // Extract everything after the first "number - " pattern
+              displayText = originalText.replace(/^\d{4} - /, "");
+            }
+
+            // Check if we have Arabic translation, otherwise use the cleaned original name
+            const arabicName = arabicCountryNames[countryData];
+            const displayName = arabicName || displayText;
 
             countryNameElement.textContent = `${formattedIndex} - ${displayName}`;
           }
@@ -444,14 +451,17 @@ function initPhoneInput() {
                 const nameMatch = formattedName.includes(query);
                 const codeMatch = dialCode.textContent.includes(query);
 
-                // Also search in the original country name (after the dash)
-                const originalNameMatch =
-                  formattedName.split(" - ")[1]?.includes(query) || false;
+                // Extract the actual country name (after the number and dash)
+                const actualCountryName = formattedName
+                  .split(" - ")
+                  .slice(1)
+                  .join(" - ");
+                const countryNameMatch = actualCountryName.includes(query);
 
                 if (
                   nameMatch ||
                   codeMatch ||
-                  originalNameMatch ||
+                  countryNameMatch ||
                   query === ""
                 ) {
                   item.style.display = "flex";
