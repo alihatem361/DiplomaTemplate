@@ -35,13 +35,32 @@ export function initFormHandler() {
         },
       },
       errorPlacement: function (error, element) {
-        // Create error container if it doesn't exist
-        if (!element.siblings(".error-container").length) {
-          element.after('<div class="error-container"></div>');
+        // Special handling for phone field
+        if (element.attr("id") === "phone") {
+          const phoneContainer = element.closest(".phone-container");
+          if (phoneContainer.length) {
+            // Create error container after phone container if it doesn't exist
+            if (!phoneContainer.siblings(".error-container").length) {
+              phoneContainer.after('<div class="error-container"></div>');
+            }
+            // Place error message in the container after phone container
+            phoneContainer.siblings(".error-container").html(error);
+          } else {
+            // Fallback to default behavior
+            if (!element.siblings(".error-container").length) {
+              element.after('<div class="error-container"></div>');
+            }
+            element.siblings(".error-container").html(error);
+          }
+        } else {
+          // Default behavior for other fields
+          // Create error container if it doesn't exist
+          if (!element.siblings(".error-container").length) {
+            element.after('<div class="error-container"></div>');
+          }
+          // Place error message in the container
+          element.siblings(".error-container").html(error);
         }
-
-        // Place error message in the container
-        element.siblings(".error-container").html(error);
 
         // Add error class to field container
         element.closest(".form-field").addClass("has-error");
@@ -49,7 +68,18 @@ export function initFormHandler() {
       success: function (label, element) {
         // Remove error class and add success elements
         $(element).closest(".form-field").removeClass("has-error");
-        $(element).siblings(".error-container").empty();
+
+        // Special handling for phone field
+        if ($(element).attr("id") === "phone") {
+          const phoneContainer = $(element).closest(".phone-container");
+          if (phoneContainer.length) {
+            phoneContainer.siblings(".error-container").empty();
+          } else {
+            $(element).siblings(".error-container").empty();
+          }
+        } else {
+          $(element).siblings(".error-container").empty();
+        }
 
         // Add success icon if not exists
         if (!$(element).siblings(".success-icon").length) {
@@ -77,15 +107,28 @@ export function initFormHandler() {
           $("#phone").addClass("error");
           $("#phone").closest(".form-field").addClass("has-error");
 
-          if (!$("#phone").siblings(".error-container").length) {
-            $("#phone").after('<div class="error-container"></div>');
+          const phoneContainer = $("#phone").closest(".phone-container");
+          if (phoneContainer.length) {
+            // Handle phone container error placement
+            if (!phoneContainer.siblings(".error-container").length) {
+              phoneContainer.after('<div class="error-container"></div>');
+            }
+            phoneContainer
+              .siblings(".error-container")
+              .html(
+                '<label class="error">رقم الهاتف غير صحيح، يرجى التأكد من الرقم والرمز الدولي</label>'
+              );
+          } else {
+            // Fallback to default behavior
+            if (!$("#phone").siblings(".error-container").length) {
+              $("#phone").after('<div class="error-container"></div>');
+            }
+            $("#phone")
+              .siblings(".error-container")
+              .html(
+                '<label class="error">رقم الهاتف غير صحيح، يرجى التأكد من الرقم والرمز الدولي</label>'
+              );
           }
-
-          $("#phone")
-            .siblings(".error-container")
-            .html(
-              '<label class="error">رقم الهاتف غير صحيح، يرجى التأكد من الرقم والرمز الدولي</label>'
-            );
 
           // Scroll to phone field
           $("#phone")[0].scrollIntoView({

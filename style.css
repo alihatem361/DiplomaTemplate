@@ -2830,6 +2830,28 @@ body {
   width: 100% !important;
 }
 
+/* Ensure phone field container is block to allow error below */
+.form-field:has(.phone-container) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fallback for browsers that don't support :has() */
+.form-field .phone-container {
+  order: 1;
+}
+
+.form-field .phone-container + .error-container {
+  order: 2;
+}
+
+/* Make phone error appear below the input */
+.phone-container + .error-container {
+  margin-top: 8px;
+  width: 100%;
+  display: block;
+}
+
 /* Fix display of the flags by ensuring the .iti__flag class is displayed properly */
 .iti__flag {
   background-image: url("https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/img/flags.png");
@@ -2921,13 +2943,6 @@ label.error {
   transform-origin: top !important;
 }
 
-/* Error message icon */
-label.error::before {
-  content: "⚠️";
-  font-size: 16px;
-  animation: errorPulse 2s infinite;
-}
-
 /* Error slide-in animation */
 @keyframes errorSlideIn {
   0% {
@@ -2969,7 +2984,7 @@ label.error::before {
 .field-input.valid + .success-icon {
   position: absolute;
   left: 12px;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   color: #28a745;
   font-size: 18px;
@@ -3014,6 +3029,19 @@ label.error::before {
 .error-container {
   width: 100%;
   margin-top: 4px;
+}
+
+/* Specific styling for phone field error container */
+.phone-container + .error-container {
+  margin-top: 8px;
+  width: 100%;
+  display: block;
+}
+
+/* Ensure phone field errors don't appear inline */
+.phone-container + .error-container label.error {
+  width: 100%;
+  margin-top: 0 !important;
 }
 
 /* Mobile responsive error styling */
