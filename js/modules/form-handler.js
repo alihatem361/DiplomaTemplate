@@ -1,60 +1,40 @@
 export function initFormHandler() {
-  const form = document.querySelector(".form");
-  const submitButton = document.querySelector(".submit-button");
+  const form = $("#registration-form-element");
 
-  if (form && submitButton) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const nameInput = form.querySelector('input[type="text"]');
-      const emailInput = form.querySelector('input[type="email"]');
-      const phoneInput = document.querySelector("#phone");
-
-      let isValid = true;
-      let errors = [];
-
-      if (!nameInput.value.trim()) {
-        errors.push("يرجى إدخال الاسم");
-        nameInput.classList.add("error");
-        isValid = false;
-      } else {
-        nameInput.classList.remove("error");
-      }
-
-      if (!emailInput.value.trim()) {
-        errors.push("يرجى إدخال البريد الإلكتروني");
-        emailInput.classList.add("error");
-        isValid = false;
-      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
-        errors.push("يرجى إدخال بريد إلكتروني صحيح");
-        emailInput.classList.add("error");
-        isValid = false;
-      } else {
-        emailInput.classList.remove("error");
-      }
-
-      if (window.phoneInputInstance) {
-        if (!phoneInput.value.trim()) {
-          errors.push("يرجى إدخال رقم الهاتف");
-          phoneInput.classList.add("error");
-          isValid = false;
-        } else if (!window.phoneInputInstance.isValidNumber()) {
-          errors.push("يرجى إدخال رقم هاتف صحيح");
-          phoneInput.classList.add("error");
-          isValid = false;
-        } else {
-          phoneInput.classList.remove("error");
-        }
-      }
-
-      if (isValid) {
+  if (form.length) {
+    form.validate({
+      rules: {
+        name: {
+          required: true,
+        },
+        email: {
+          required: true,
+          email: true,
+        },
+        phone: {
+          required: true,
+        },
+      },
+      messages: {
+        name: {
+          required: "يرجى إدخال الاسم",
+        },
+        email: {
+          required: "يرجى إدخال البريد الإلكتروني",
+          email: "يرجى إدخال بريد إلكتروني صحيح",
+        },
+        phone: {
+          required: "يرجى إدخال رقم الهاتف",
+        },
+      },
+      submitHandler: function (form) {
         const fullPhoneNumber = window.phoneInputInstance
           ? window.phoneInputInstance.getNumber()
-          : phoneInput.value;
+          : $("#phone").val();
 
         const formData = {
-          name: nameInput.value.trim(),
-          email: emailInput.value.trim(),
+          name: $("#name").val().trim(),
+          email: $("#email").val().trim(),
           phone: fullPhoneNumber,
           country: window.phoneInputInstance
             ? window.phoneInputInstance.getSelectedCountryData().name
@@ -66,24 +46,24 @@ export function initFormHandler() {
 
         console.log("Form submitted with data:", formData);
 
-        submitButton.textContent = "تم التسجيل بنجاح!";
-        submitButton.style.background = "var(--brand-primary)";
-        submitButton.disabled = true;
+        const submitButton = $(".submit-button");
+        submitButton.text("تم التسجيل بنجاح!");
+        submitButton.css("background", "var(--brand-primary)");
+        submitButton.prop("disabled", true);
 
         setTimeout(() => {
           form.reset();
-          submitButton.textContent = "سجّل الآن وابدأ رحلتك!";
-          submitButton.style.background = "var(--brand-secondary)";
-          submitButton.disabled = false;
+          submitButton.text("سجّل الآن وابدأ رحلتك!");
+          submitButton.css("background", "var(--brand-secondary)");
+          submitButton.prop("disabled", false);
 
-          [nameInput, emailInput, phoneInput].forEach((input) => {
-            input.classList.remove("error", "valid");
+          $("#name, #email, #phone").each(function () {
+            $(this).removeClass("error valid");
           });
         }, 3000);
-      } else {
-        console.log("Form validation errors:", errors);
-        alert(errors.join("\n"));
-      }
+
+        return false; // Prevent default form submission
+      },
     });
   }
 }
