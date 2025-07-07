@@ -2454,6 +2454,13 @@ body {
   justify-content: end;
 }
 
+/* center image in small screens */
+
+@media screen and (max-width: 1199px) {
+  .footer .brand {
+    justify-content: center;
+  }
+}
 @media screen and (min-width: 1280px) {
   .footer .brand {
     text-align: right;
