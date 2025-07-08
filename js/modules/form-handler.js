@@ -31,7 +31,7 @@ export function initFormHandler() {
         },
         phone: {
           required: "يرجى إدخال رقم الهاتف",
-          minlength: "رقم الهاتف قصير جداً، يرجى التأكد من الرقم",
+          minlength: "رقم الهاتف قصير جداً، يرجى التأكد من الرقم.",
         },
       },
       errorPlacement: function (error, element) {
